@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADM Médicos</title>
+
+<link rel="stylesheet" href="medicos.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header class="header">
+
+<div class="header-left">
+<p class="logo-icon"></p>
+</div>
+
+<nav class="nav-menu">
+<a href="#">Turnos</a>
+<a href="#">Pacientes</a>
+<a href="#">Consultorio</a>
+<a href="#">Recetas</a>
+<a href="#">Administración</a>
+<a href="#">Sistemas</a>
+<a href="#">Salir</a>
+</nav>
+
+<div class="header-right">
+<span class="user-name">PALACIO GASTON ANTONIO</span>
+</div>
+
+</header>
+
+<section class="search-bar">
+
+<input
+type="text"
+placeholder="Nombre del Paciente"
+class="input-paciente">
+
+<select class="select-obra">
+<option>Obras Sociales</option>
+</select>
+
+<button class="btn-buscar">
+Buscar
+</button>
+
+</section>
+
+<main class="main-content">
+
+<h1 class="page-title">
+ADM Médicos
+</h1>
+
+<div class="cards-container">
+
+<div class="card">
+
+<h2>Información General</h2>
+
+<div class="form-grid">
+
+<div class="form-group">
+  <label>Usuario</label>
+
+  <select id="medicoSelect">
+  </select>
+
+</div>
+
+<div class="form-group">
+<label>Matrícula</label>
+<input id="matricula" type="text">
+</div>
+
+<div class="form-group">
+<label>Sistema</label>
+<input id="sistema" type="number">
+</div>
+
+<div class="form-group">
+<label>Consultorio</label>
+<input id="consultorio" type="number">
+</div>
+
+<div class="form-group">
+<label>Facturación</label>
+<input id="factura" type="number">
+</div>
+
+<div class="form-group">
+<label>Tiempo Mínimo</label>
+<input id="tiempoMinimo" type="number">
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Especialidades</h2>
+
+<div class="especialidades-grid">
+
+<label><input class="especialidad" type="checkbox" value="Médico"> Médico</label>
+
+<label><input class="especialidad" type="checkbox" value="Urología"> Urología</label>
+
+<label><input class="especialidad" type="checkbox" value="Ecografía"> Ecografía</label>
+
+<label><input class="especialidad" type="checkbox" value="Enfermería"> Enfermería</label>
+
+<label><input class="especialidad" type="checkbox" value="Pediatría"> Pediatría</label>
+
+<label><input class="especialidad" type="checkbox" value="Ginecología"> Ginecología</label>
+
+<label><input class="especialidad" type="checkbox" value="Cardiología"> Cardiología</label>
+
+<label><input class="especialidad" type="checkbox" value="Odontología"> Odontología</label>
+
+<label><input class="especialidad" type="checkbox" value="Psicología"> Psicología</label>
+
+<label><input class="especialidad" type="checkbox" value="Reumatología"> Reumatología</label>
+
+<label><input class="especialidad" type="checkbox" value="Fonoaudiología"> Fonoaudiología</label>
+
+<label><input class="especialidad" type="checkbox" value="Flebología"> Flebología</label>
+
+<label><input class="especialidad" type="checkbox" value="Otorrinolaringología"> Otorrinolaringología</label>
+
+<label><input class="especialidad" type="checkbox" value="Nutricionista"> Nutricionista</label>
+
+<label><input class="especialidad" type="checkbox" value="Dermatología"> Dermatología</label>
+
+<label><input class="especialidad" type="checkbox" value="Psiquiatría"> Psiquiatría</label>
+
+<label><input class="especialidad" type="checkbox" value="Neurología"> Neurología</label>
+
+<label><input class="especialidad" type="checkbox" value="Clínica Médica"> Clínica Médica</label>
+
+<label><input class="especialidad" type="checkbox" value="Ortopedia y Traumatología"> Ortopedia y Traumatología</label>
+
+<label><input class="especialidad" type="checkbox" value="Homeopatía"> Homeopatía</label>
+
+<label><input class="especialidad" type="checkbox" value="Endocrinología"> Endocrinología</label>
+
+<label><input class="especialidad" type="checkbox" value="Obesidad / No Dieta"> Obesidad / No Dieta</label>
+
+<label><input class="especialidad" type="checkbox" value="Oftalmología"> Oftalmología</label>
+
+<label><input class="especialidad" type="checkbox" value="Neumonología y Trast. del Sueño"> Neumonología y Trast. del Sueño</label>
+
+<label><input class="especialidad" type="checkbox" value="Alergia y Asma"> Alergia y Asma</label>
+
+<label><input class="especialidad" type="checkbox" value="Inmunología Clínica"> Inmunología Clínica</label>
+
+<label><input class="especialidad" type="checkbox" value="Kinesiología"> Kinesiología</label>
+
+<label><input class="especialidad" type="checkbox" value="Gastroenterología"> Gastroenterología</label>
+
+<label><input class="especialidad" type="checkbox" value="Obstetricia"> Obstetricia</label>
+
+<label><input class="especialidad" type="checkbox" value="Cirugía General"> Cirugía General</label>
+
+<label><input class="especialidad" type="checkbox" value="Estética"> Estética</label>
+
+<label><input class="especialidad" type="checkbox" value="Infectología"> Infectología</label>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Días de Atención</h2>
+
+<div class="dias-grid">
+
+<label>
+<input class="dia" type="checkbox" value="Lunes">
+Lunes
+</label>
+
+<label>
+<input class="dia" type="checkbox" value="Martes">
+Martes
+</label>
+
+<label>
+<input class="dia" type="checkbox" value="Miércoles">
+Miércoles
+</label>
+
+<label>
+<input class="dia" type="checkbox" value="Jueves">
+Jueves
+</label>
+
+<label>
+<input class="dia" type="checkbox" value="Viernes">
+Viernes
+</label>
+
+<label>
+<input class="dia" type="checkbox" value="Sábado">
+Sábado
+</label>
+
+<label>
+<input class="dia" type="checkbox" value="Domingo">
+Domingo
+</label>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Horarios</h2>
+
+<div class="horarios-grid">
+
+<div class="form-group">
+<label>Lunes</label>
+<input id="lunEntrada" type="time">
+<input id="lunSalida" type="time">
+</div>
+
+<div class="form-group">
+<label>Martes</label>
+<input id="marEntrada" type="time">
+<input id="marSalida" type="time">
+</div>
+
+<div class="form-group">
+<label>Miércoles</label>
+<input id="mieEntrada" type="time">
+<input id="mieSalida" type="time">
+</div>
+
+<div class="form-group">
+<label>Jueves</label>
+<input id="jueEntrada" type="time">
+<input id="jueSalida" type="time">
+</div>
+
+<div class="form-group">
+<label>Viernes</label>
+<input id="vieEntrada" type="time">
+<input id="vieSalida" type="time">
+</div>
+
+<div class="form-group">
+<label>Sábado</label>
+<input id="sabEntrada" type="time">
+<input id="sabSalida" type="time">
+</div>
+
+<div class="form-group">
+<label>Domingo</label>
+<input id="domEntrada" type="time">
+<input id="domSalida" type="time">
+</div>
+
+</div>
+
+</div>
+
+<div class="actions">
+
+<button class="btn-guardar">
+Guardar Cambios
+</button>
+
+<button class="btn-cancelar">
+Cancelar
+</button>
+
+</div>
+
+</div>
+
+</main>
+<script src="medicos.js"></script>
+</body>
+</html>
