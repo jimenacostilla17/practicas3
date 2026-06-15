@@ -6,6 +6,12 @@ const medicos = {
     consultorio: "1",
     factura: "1",
     tiempoMinimo: "30",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Otorrinolaringología"],
     dias: ["Martes", "Miércoles", "Viernes"],
     horarios: {
@@ -25,6 +31,12 @@ const medicos = {
     consultorio: "8",
     factura: "1",
     tiempoMinimo: "30",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Otorrinolaringología"],
     dias: ["Lunes", "Martes", "Jueves", "Viernes"],
     horarios: {
@@ -44,6 +56,12 @@ const medicos = {
     consultorio: "3",
     factura: "1",
     tiempoMinimo: "20",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Cardiología"],
     dias: ["Lunes", "Viernes"],
     horarios: {
@@ -63,6 +81,12 @@ const medicos = {
     consultorio: "5",
     factura: "1",
     tiempoMinimo: "20",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Gastroenterología"],
     dias: ["Martes", "Jueves"],
     horarios: {
@@ -82,6 +106,12 @@ const medicos = {
     consultorio: "6",
     factura: "1",
     tiempoMinimo: "30",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Neurología"],
     dias: ["Sábado"],
     horarios: {
@@ -101,6 +131,12 @@ const medicos = {
     consultorio: "7",
     factura: "1",
     tiempoMinimo: "30",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Neurología"],
     dias: ["Miércoles"],
     horarios: {
@@ -120,6 +156,12 @@ const medicos = {
     consultorio: "2",
     factura: "1",
     tiempoMinimo: "20",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Neurología"],
     dias: ["Lunes"],
     horarios: {
@@ -139,6 +181,12 @@ const medicos = {
     consultorio: "4",
     factura: "1",
     tiempoMinimo: "30",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Reumatología"],
     dias: ["Miércoles"],
     horarios: {
@@ -158,6 +206,12 @@ const medicos = {
     consultorio: "3",
     factura: "1",
     tiempoMinimo: "20",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Clínica Médica"],
     dias: ["Martes"],
     horarios: {
@@ -177,6 +231,12 @@ const medicos = {
     consultorio: "5",
     factura: "1",
     tiempoMinimo: "20",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Infectología"],
     dias: ["Martes"],
     horarios: {
@@ -196,6 +256,12 @@ const medicos = {
     consultorio: "4",
     factura: "1",
     tiempoMinimo: "20",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Endocrinología"],
     dias: ["Miércoles"],
     horarios: {
@@ -215,6 +281,12 @@ const medicos = {
     consultorio: "7",
     factura: "1",
     tiempoMinimo: "30",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Cirugía General"],
     dias: ["Lunes", "Miércoles", "Viernes"],
     horarios: {
@@ -234,6 +306,12 @@ const medicos = {
     consultorio: "3",
     factura: "1",
     tiempoMinimo: "20",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Psiquiatría"],
     dias: ["Miércoles"],
     horarios: {
@@ -253,6 +331,12 @@ const medicos = {
     consultorio: "6",
     factura: "1",
     tiempoMinimo: "30",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Psicología"],
     dias: ["Lunes", "Miércoles", "Viernes"],
     horarios: {
@@ -272,6 +356,12 @@ const medicos = {
     consultorio: "2",
     factura: "1",
     tiempoMinimo: "20",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Ginecología", "Obstetricia"],
     dias: ["Lunes"],
     horarios: {
@@ -291,6 +381,12 @@ const medicos = {
     consultorio: "1",
     factura: "1",
     tiempoMinimo: "20",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Dermatología"],
     dias: ["Miércoles"],
     horarios: {
@@ -310,6 +406,12 @@ const medicos = {
     consultorio: "5",
     factura: "1",
     tiempoMinimo: "20",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Dermatología"],
     dias: ["Lunes"],
     horarios: {
@@ -324,12 +426,17 @@ const medicos = {
   },
 
   "DE LA FUENTE JIMENA": {
-    matricula: "1018",
-    sistema: "1",
-    consultorio: "8",
-    factura: "1",
-    tiempoMinimo: "30",
-    especialidades: ["Odontología"],
+  matricula: "1018",
+  sistema: "1",
+  consultorio: "8",
+  factura: "1",
+  tiempoMinimo: "30",
+
+  verVacios: "Con agenda completa",
+  visiblePantallas: "SI",
+  turnosInternet: "Visible, pero no puede por Internet",
+
+  especialidades: ["Odontología"],
     dias: ["Lunes", "Viernes"],
     horarios: {
       lunesEntrada:"16:00", lunesSalida:"20:30",
@@ -346,8 +453,15 @@ const medicos = {
     matricula: "1019",
     sistema: "1",
     consultorio: "4",
+    
     factura: "1",
     tiempoMinimo: "20",
+    verVacios: "Con agenda completa",
+
+visiblePantallas: "SI",
+
+turnosInternet:
+  "Visible, pero no puede por Internet",
     especialidades: ["Nutricionista"],
     dias: ["Lunes"],
     horarios: {
@@ -374,6 +488,14 @@ const sistema = document.getElementById("sistema");
 const consultorio = document.getElementById("consultorio");
 const factura = document.getElementById("factura");
 const tiempoMinimo = document.getElementById("tiempoMinimo");
+const verVacios =
+  document.getElementById("verVacios");
+
+const visiblePantallas =
+  document.getElementById("visiblePantallas");
+
+const turnosInternet =
+  document.getElementById("turnosInternet");
 
 // --------------------
 // CARGAR SELECT
@@ -426,6 +548,15 @@ function cargarMedico() {
   consultorio.value = medico.consultorio;
   factura.value = medico.factura;
   tiempoMinimo.value = medico.tiempoMinimo;
+  verVacios.value =
+  medico.verVacios || "Con agenda completa";
+
+visiblePantallas.value =
+  medico.visiblePantallas || "SI";
+
+turnosInternet.value =
+  medico.turnosInternet ||
+  "Visible, pero no puede por Internet";
 
   limpiarCheckboxes();
 
@@ -494,6 +625,68 @@ function cargarMedico() {
 
   document.getElementById("domSalida").value =
     medico.horarios.domingoSalida;
+}
+
+document
+.getElementById("nuevoMedico")
+.addEventListener("click", () => {
+
+  const nombre = prompt("Nombre del médico");
+
+  if (!nombre) return;
+
+  medicos[nombre] = {
+
+    matricula: "",
+
+    sistema: "1",
+
+    consultorio: "",
+
+    factura: "1",
+
+    tiempoMinimo: "30",
+
+    especialidades: [],
+
+    dias: [],
+
+    horarios: {
+      lunesEntrada: "",
+      lunesSalida: "",
+      martesEntrada: "",
+      martesSalida: "",
+      miercolesEntrada: "",
+      miercolesSalida: "",
+      juevesEntrada: "",
+      juevesSalida: "",
+      viernesEntrada: "",
+      viernesSalida: "",
+      sabadoEntrada: "",
+      sabadoSalida: "",
+      domingoEntrada: "",
+      domingoSalida: ""
+    }
+  };
+
+  actualizarSelect();
+
+});
+function actualizarSelect() {
+
+  medicoSelect.innerHTML = "";
+
+  Object.keys(medicos).forEach(nombre => {
+
+    const option = document.createElement("option");
+
+    option.value = nombre;
+    option.textContent = nombre;
+
+    medicoSelect.appendChild(option);
+
+  });
+
 }
 
 // --------------------
