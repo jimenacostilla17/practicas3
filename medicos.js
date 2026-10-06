@@ -333,7 +333,6 @@ function actualizarVisibilidadHorarios() {
       } else {
         horarioRow.classList.remove("activo");
         horarioRow.dataset.scrolled = "";
-        // Limpiar inputs al desmarcar
         document.getElementById(config.mananaE).value = "";
         document.getElementById(config.mananaS).value = "";
         document.getElementById(config.tardeE).value = "";
@@ -350,21 +349,17 @@ document.querySelectorAll(".dia").forEach(checkbox => {
 // 6. BUSCADOR DE MÉDICOS (FILTRO PARA SELECT NATIVO)
 // ==========================================
 
-// Guardamos la lista original de médicos para poder filtrar siempre desde el total
 const listaOriginalMedicos = Object.keys(medicos);
 
 function filtrarMedicos(texto) {
   const filtro = texto.toLowerCase().trim();
   
-  // Limpiamos el select actual
   medicoSelect.innerHTML = '<option value="">-- Seleccione un médico --</option>';
   
-  // Filtramos la lista original
   const filtrados = listaOriginalMedicos.filter(nombre => 
     nombre.toLowerCase().includes(filtro)
   );
   
-  // Regeneramos las opciones
   filtrados.forEach(nombre => {
     const option = document.createElement("option");
     option.value = nombre;
@@ -372,28 +367,23 @@ function filtrarMedicos(texto) {
     medicoSelect.appendChild(option);
   });
   
-  // Si solo queda un resultado, lo seleccionamos automáticamente
   if (filtrados.length === 1 && filtro.length > 2) {
     medicoSelect.value = filtrados[0];
     cargarMedico();
   }
 }
 
-// Escuchar lo que escribe el usuario
 medicoSearch.addEventListener("input", (e) => {
   filtrarMedicos(e.target.value);
 });
 
-// Cuando el usuario selecciona algo del dropdown
 medicoSelect.addEventListener("change", () => {
   if (medicoSelect.value) {
     cargarMedico();
-    // Limpiar el buscador después de seleccionar
     medicoSearch.value = ""; 
   }
 });
 
-// Cargar la lista completa al inicio
 filtrarMedicos("");
 // ==========================================
 // 7. FUNCIONES DE CARGA Y LIMPIEZA
@@ -406,7 +396,6 @@ function limpiarCheckboxes() {
 }
 
 function cargarMedico() {
-  // ✅ CORREGIDO: Usar medicoSelect.value en lugar de medicoSelectHidden
   const nombre = medicoSelect.value; 
   const medico = medicos[nombre];
 
@@ -415,7 +404,6 @@ function cargarMedico() {
     matricula.value = ""; sistema.value = ""; consultorio.value = "";
     factura.value = ""; tiempoMinimo.value = "";
     
-    // Limpiar editores si no hay médico seleccionado
     if (typeof quillDetalle !== 'undefined') quillDetalle.setText('');
     if (typeof quillMensajeInternet !== 'undefined') quillMensajeInternet.setText('');
     const msgWA = document.getElementById('mensajeWhatsApp');
@@ -469,7 +457,6 @@ function cargarMedico() {
       });
     }
 
-    // ✅ CORREGIDO: ¡Aquí se cargan los editores de texto!
     cargarContenidoEditores(medico);
 
     actualizarVisibilidadHorarios();
@@ -541,16 +528,14 @@ if (Object.keys(medicos).length > 0) {
 // 10. EDITORES DE TEXTO ENRIQUECIDO (QUILL)
 // ==========================================
 
-// Configuración de la barra de herramientas (igual a la de la imagen)
 const toolbarOptions = [
   [{ 'header': [1, 2, 3, false] }],
   ['bold', 'italic', 'underline'],
   [{ 'list': 'ordered'}, { 'list': 'bullet' }],
   [{ 'align': [] }],
-  ['clean'] // Botón para limpiar formato
+  ['clean'] 
 ];
 
-// Inicializar editor "Detalle"
 const quillDetalle = new Quill('#editorDetalle', {
   theme: 'snow',
   placeholder: 'Escribe los detalles del médico...',
@@ -559,7 +544,6 @@ const quillDetalle = new Quill('#editorDetalle', {
   }
 });
 
-// Inicializar editor "Mensaje Internet"
 const quillMensajeInternet = new Quill('#editorMensajeInternet', {
   theme: 'snow',
   placeholder: 'Mensaje para mostrar en internet...',
@@ -568,7 +552,6 @@ const quillMensajeInternet = new Quill('#editorMensajeInternet', {
   }
 });
 
-// Función para cargar el contenido de los editores al seleccionar un médico
 function cargarContenidoEditores(medico) {
   if (medico.detalle) {
     quillDetalle.root.innerHTML = medico.detalle;
@@ -582,14 +565,12 @@ function cargarContenidoEditores(medico) {
     quillMensajeInternet.setText('');
   }
   
-  // Mensaje WhatsApp (textarea simple)
   const mensajeWhatsApp = document.getElementById('mensajeWhatsApp');
   if (mensajeWhatsApp) {
     mensajeWhatsApp.value = medico.mensajeWhatsApp || '';
   }
 }
 
-// Función para guardar el contenido de los editores (útil cuando implementes el botón Guardar)
 function guardarContenidoEditores() {
   return {
     detalle: quillDetalle.root.innerHTML,
