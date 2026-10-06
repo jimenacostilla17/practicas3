@@ -1,238 +1,353 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADM Médicos</title>
-<link rel="stylesheet" href="medicos.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADM Médicos</title>
+  <link rel="stylesheet" href="medicos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
 </head>
 <body>
 
-<header class="header">
-  <div class="header-left">
-    <p class="logo-icon">⚕</p>
-  </div>
-  <nav class="nav-menu">
-    <a href="#">Turnos</a>
-    <a href="#">Pacientes</a>
-    <a href="#">Consultorio</a>
-    <a href="#">Recetas</a>
-    <a href="#" class="active">Administración</a>
-    <a href="#">Sistemas</a>
-    <a href="#">Salir</a>
-  </nav>
-  <div class="header-right">
-    <span class="user-name">PALACIO GASTON ANTONIO</span>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-      <span class="icon">☀️</span>
-    </button>
-  </div>
-</header>
+  <header class="header">
+    <div class="header-left">
+      <p class="logo-icon">⚕</p>
+    </div>
+    <nav class="nav-menu">
+      <a href="#">Turnos</a>
+      <a href="#">Pacientes</a>
+      <a href="#">Consultorio</a>
+      <a href="#">Recetas</a>
+      <a href="#" class="active">Administración</a>
+      <a href="#">Sistemas</a>
+      <a href="#">Salir</a>
+    </nav>
+    <div class="header-right">
+      <span class="user-name">PALACIO GASTON ANTONIO</span>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+        <span class="icon">☀️</span>
+      </button>
+    </div>
+  </header>
 
-<section class="search-bar">
-  <input type="text" placeholder="Nombre del Paciente" class="input-paciente">
-  <select class="select-obra">
-    <option>Obras Sociales</option>
+  <section class="search-bar">
+    <input type="text" placeholder="Nombre del Paciente" class="input-paciente">
+    <select class="select-obra">
+      <option>Obras Sociales</option>
+    </select>
+    <button class="btn-buscar">Buscar</button>
+  </section>
+
+  <main class="main-content">
+    <h1 class="page-title">ADM Médicos</h1>
+
+    <div class="cards-container" id="form-container">
+
+      <!-- TARJETA 1: INFORMACIÓN GENERAL -->
+      <div class="card">
+        <h2><span class="icon-title">👤</span> Información General</h2>
+        <div class="form-grid">
+      <div class="form-group full-width">
+  <label>Seleccionar Médico</label>
+  
+  <!-- Buscador de filtro (limpio y simple) -->
+  <input type="text" id="medicoSearch" class="select-primary" placeholder="🔍 Filtrar médicos..." autocomplete="off" style="margin-bottom: 12px;">
+  
+  <!-- Select original con la lista desplegable -->
+  <select id="medicoSelect" class="select-primary">
+    <option value="">-- Seleccione un médico --</option>
   </select>
-  <button class="btn-buscar">Buscar</button>
-</section>
-
-<main class="main-content">
-  <h1 class="page-title">ADM Médicos</h1>
-
-  <div class="cards-container" id="form-container">
-
-    <!-- TARJETA 1: INFORMACIÓN GENERAL -->
-    <div class="card">
-      <h2><span class="icon-title"></span> Información General</h2>
-      <div class="form-grid">
-        <div class="form-group full-width">
-          <label>Seleccionar Médico</label>
-          <select id="medicoSelect" class="select-primary">
-            <option value="">-- Seleccione un médico --</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Matrícula</label>
-          <input id="matricula" type="text" placeholder="Ej: 1001">
-        </div>
-        <div class="form-group">
-          <label>Sistema</label>
-          <input id="sistema" type="number" placeholder="1">
-        </div>
-        <div class="form-group">
-          <label>Consultorio</label>
-          <input id="consultorio" type="number" placeholder="Ej: 8">
-        </div>
-        <div class="form-group">
-          <label>Facturación</label>
-          <input id="factura" type="number" placeholder="1">
-        </div>
-        <div class="form-group">
-          <label>Tiempo Mínimo (min)</label>
-          <input id="tiempoMinimo" type="number" placeholder="30">
+</div>
+          <div class="form-group">
+            <label>Matrícula</label>
+            <input id="matricula" type="text" placeholder="Ej: 1001">
+          </div>
+          <div class="form-group">
+            <label>Sistema</label>
+            <input id="sistema" type="number" placeholder="1">
+          </div>
+          <div class="form-group">
+            <label>Consultorio</label>
+            <input id="consultorio" type="number" placeholder="Ej: 8">
+          </div>
+          <div class="form-group">
+            <label>Facturación</label>
+            <input id="factura" type="number" placeholder="1">
+          </div>
+          <div class="form-group">
+            <label>Tiempo Mínimo (min)</label>
+            <input id="tiempoMinimo" type="number" placeholder="30">
+          </div>
         </div>
       </div>
+
+      <!-- TARJETA 2: ESPECIALIDADES -->
+      <div class="card">
+        <h2><span class="icon-title">🩺</span> Especialidades</h2>
+        <div class="especialidades-grid">
+          <label><input class="especialidad" type="checkbox" value="Médico"> Médico</label>
+          <label><input class="especialidad" type="checkbox" value="Urología"> Urología</label>
+          <label><input class="especialidad" type="checkbox" value="Ecografía"> Ecografía</label>
+          <label><input class="especialidad" type="checkbox" value="Enfermería"> Enfermería</label>
+          <label><input class="especialidad" type="checkbox" value="Pediatría"> Pediatría</label>
+          <label><input class="especialidad" type="checkbox" value="Ginecología"> Ginecología</label>
+          <label><input class="especialidad" type="checkbox" value="Cardiología"> Cardiología</label>
+          <label><input class="especialidad" type="checkbox" value="Odontología"> Odontología</label>
+          <label><input class="especialidad" type="checkbox" value="Psicología"> Psicología</label>
+          <label><input class="especialidad" type="checkbox" value="Reumatología"> Reumatología</label>
+          <label><input class="especialidad" type="checkbox" value="Fonoaudiología"> Fonoaudiología</label>
+          <label><input class="especialidad" type="checkbox" value="Flebología"> Flebología</label>
+          <label><input class="especialidad" type="checkbox" value="Otorrinolaringología"> Otorrinolaringología</label>
+          <label><input class="especialidad" type="checkbox" value="Nutricionista"> Nutricionista</label>
+          <label><input class="especialidad" type="checkbox" value="Dermatología"> Dermatología</label>
+          <label><input class="especialidad" type="checkbox" value="Psiquiatría"> Psiquiatría</label>
+          <label><input class="especialidad" type="checkbox" value="Neurología"> Neurología</label>
+          <label><input class="especialidad" type="checkbox" value="Clínica Médica"> Clínica Médica</label>
+          <label><input class="especialidad" type="checkbox" value="Ortopedia y Traumatología"> Ortopedia y Traumatología</label>
+          <label><input class="especialidad" type="checkbox" value="Homeopatía"> Homeopatía</label>
+          <label><input class="especialidad" type="checkbox" value="Endocrinología"> Endocrinología</label>
+          <label><input class="especialidad" type="checkbox" value="Obesidad / No Dieta"> Obesidad / No Dieta</label>
+          <label><input class="especialidad" type="checkbox" value="Oftalmología"> Oftalmología</label>
+          <label><input class="especialidad" type="checkbox" value="Neumonología y Trast. del Sueño"> Neumonología y Trast. del Sueño</label>
+          <label><input class="especialidad" type="checkbox" value="Alergia y Asma"> Alergia y Asma</label>
+          <label><input class="especialidad" type="checkbox" value="Inmunología Clínica"> Inmunología Clínica</label>
+          <label><input class="especialidad" type="checkbox" value="Kinesiología"> Kinesiología</label>
+          <label><input class="especialidad" type="checkbox" value="Gastroenterología"> Gastroenterología</label>
+          <label><input class="especialidad" type="checkbox" value="Obstetricia"> Obstetricia</label>
+          <label><input class="especialidad" type="checkbox" value="Cirugía General"> Cirugía General</label>
+          <label><input class="especialidad" type="checkbox" value="Estética"> Estética</label>
+          <label><input class="especialidad" type="checkbox" value="Infectología"> Infectología</label>
+        </div>
+      </div>
+
+      <!-- TARJETA 3: DÍAS DE ATENCIÓN -->
+      <div class="card">
+        <h2><span class="icon-title">📅</span> Días de Atención</h2>
+        <p class="hint-text">Selecciona los días para habilitar sus horarios automáticamente.</p>
+        <div class="dias-grid">
+          <label><input class="dia" type="checkbox" value="Lunes"> Lunes</label>
+          <label><input class="dia" type="checkbox" value="Martes"> Martes</label>
+          <label><input class="dia" type="checkbox" value="Miércoles"> Miércoles</label>
+          <label><input class="dia" type="checkbox" value="Jueves"> Jueves</label>
+          <label><input class="dia" type="checkbox" value="Viernes"> Viernes</label>
+          <label><input class="dia" type="checkbox" value="Sábado"> Sábado</label>
+          <label><input class="dia" type="checkbox" value="Domingo"> Domingo</label>
+        </div>
+      </div>
+
+      <!-- TARJETA 4: HORARIOS (MAÑANA Y TARDE) -->
+      <div class="card" id="card-horarios">
+        <h2><span class="icon-title">🕒</span> Horarios</h2>
+        <div class="horarios-grid">
+          
+          <!-- LUNES -->
+          <div class="form-group horario-row" data-dia="lunes">
+            <label class="dia-label">Lunes</label>
+            <div class="time-block">
+              <span class="time-block-title">☀️ Mañana</span>
+              <div class="time-inputs">
+                <input id="lunMananaEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="lunMananaSalida" type="time">
+              </div>
+            </div>
+            <div class="time-block">
+              <span class="time-block-title">🌙 Tarde</span>
+              <div class="time-inputs">
+                <input id="lunTardeEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="lunTardeSalida" type="time">
+              </div>
+            </div>
+          </div>
+
+          <!-- MARTES -->
+          <div class="form-group horario-row" data-dia="martes">
+            <label class="dia-label">Martes</label>
+            <div class="time-block">
+              <span class="time-block-title">☀️ Mañana</span>
+              <div class="time-inputs">
+                <input id="marMananaEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="marMananaSalida" type="time">
+              </div>
+            </div>
+            <div class="time-block">
+              <span class="time-block-title">🌙 Tarde</span>
+              <div class="time-inputs">
+                <input id="marTardeEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="marTardeSalida" type="time">
+              </div>
+            </div>
+          </div>
+
+          <!-- MIÉRCOLES -->
+          <div class="form-group horario-row" data-dia="miercoles">
+            <label class="dia-label">Miércoles</label>
+            <div class="time-block">
+              <span class="time-block-title">☀️ Mañana</span>
+              <div class="time-inputs">
+                <input id="mieMananaEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="mieMananaSalida" type="time">
+              </div>
+            </div>
+            <div class="time-block">
+              <span class="time-block-title">🌙 Tarde</span>
+              <div class="time-inputs">
+                <input id="mieTardeEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="mieTardeSalida" type="time">
+              </div>
+            </div>
+          </div>
+
+          <!-- JUEVES -->
+          <div class="form-group horario-row" data-dia="jueves">
+            <label class="dia-label">Jueves</label>
+            <div class="time-block">
+              <span class="time-block-title">☀️ Mañana</span>
+              <div class="time-inputs">
+                <input id="jueMananaEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="jueMananaSalida" type="time">
+              </div>
+            </div>
+            <div class="time-block">
+              <span class="time-block-title">🌙 Tarde</span>
+              <div class="time-inputs">
+                <input id="jueTardeEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="jueTardeSalida" type="time">
+              </div>
+            </div>
+          </div>
+
+          <!-- VIERNES -->
+          <div class="form-group horario-row" data-dia="viernes">
+            <label class="dia-label">Viernes</label>
+            <div class="time-block">
+              <span class="time-block-title">☀️ Mañana</span>
+              <div class="time-inputs">
+                <input id="vieMananaEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="vieMananaSalida" type="time">
+              </div>
+            </div>
+            <div class="time-block">
+              <span class="time-block-title">🌙 Tarde</span>
+              <div class="time-inputs">
+                <input id="vieTardeEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="vieTardeSalida" type="time">
+              </div>
+            </div>
+          </div>
+
+          <!-- SÁBADO -->
+          <div class="form-group horario-row" data-dia="sabado">
+            <label class="dia-label">Sábado</label>
+            <div class="time-block">
+              <span class="time-block-title">☀️ Mañana</span>
+              <div class="time-inputs">
+                <input id="sabMananaEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="sabMananaSalida" type="time">
+              </div>
+            </div>
+            <div class="time-block">
+              <span class="time-block-title">🌙 Tarde</span>
+              <div class="time-inputs">
+                <input id="sabTardeEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="sabTardeSalida" type="time">
+              </div>
+            </div>
+          </div>
+
+          <!-- DOMINGO -->
+          <div class="form-group horario-row" data-dia="domingo">
+            <label class="dia-label">Domingo</label>
+            <div class="time-block">
+              <span class="time-block-title">☀️ Mañana</span>
+              <div class="time-inputs">
+                <input id="domMananaEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="domMananaSalida" type="time">
+              </div>
+            </div>
+            <div class="time-block">
+              <span class="time-block-title">🌙 Tarde</span>
+              <div class="time-inputs">
+                <input id="domTardeEntrada" type="time">
+                <span class="time-separator">a</span>
+                <input id="domTardeSalida" type="time">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+     <!-- TARJETA 5: CONFIGURACIÓN DE AGENDA -->
+<div class="card">
+  <h2><span class="icon-title">⚙️</span> Configuración de Agenda</h2>
+  <div class="form-grid">
+    <div class="form-group">
+      <label>Ver Vacíos</label>
+      <select id="verVacios" class="select-primary">
+        <option>Con agenda completa</option>
+        <option>Mostrar huecos</option>
+        <option>Ocultar huecos</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Visible en Pantallas</label>
+      <select id="visiblePantallas" class="select-primary">
+        <option>SI</option>
+        <option>NO</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Turnos Por Internet</label>
+      <select id="turnosInternet" class="select-primary">
+        <option>Visible, pero no puede por Internet</option>
+        <option>Visible y puede por Internet</option>
+        <option>No visible</option>
+      </select>
     </div>
 
-    <!-- TARJETA 2: ESPECIALIDADES (Ahora son Chips interactivos) -->
-    <div class="card">
-      <h2><span class="icon-title"></span> Especialidades</h2>
-      <div class="especialidades-grid">
-        <label><input class="especialidad" type="checkbox" value="Médico"> Médico</label>
-        <label><input class="especialidad" type="checkbox" value="Urología"> Urología</label>
-        <label><input class="especialidad" type="checkbox" value="Ecografía"> Ecografía</label>
-        <label><input class="especialidad" type="checkbox" value="Enfermería"> Enfermería</label>
-        <label><input class="especialidad" type="checkbox" value="Pediatría"> Pediatría</label>
-        <label><input class="especialidad" type="checkbox" value="Ginecología"> Ginecología</label>
-        <label><input class="especialidad" type="checkbox" value="Cardiología"> Cardiología</label>
-        <label><input class="especialidad" type="checkbox" value="Odontología"> Odontología</label>
-        <label><input class="especialidad" type="checkbox" value="Psicología"> Psicología</label>
-        <label><input class="especialidad" type="checkbox" value="Reumatología"> Reumatología</label>
-        <label><input class="especialidad" type="checkbox" value="Fonoaudiología"> Fonoaudiología</label>
-        <label><input class="especialidad" type="checkbox" value="Flebología"> Flebología</label>
-        <label><input class="especialidad" type="checkbox" value="Otorrinolaringología"> Otorrinolaringología</label>
-        <label><input class="especialidad" type="checkbox" value="Nutricionista"> Nutricionista</label>
-        <label><input class="especialidad" type="checkbox" value="Dermatología"> Dermatología</label>
-        <label><input class="especialidad" type="checkbox" value="Psiquiatría"> Psiquiatría</label>
-        <label><input class="especialidad" type="checkbox" value="Neurología"> Neurología</label>
-        <label><input class="especialidad" type="checkbox" value="Clínica Médica"> Clínica Médica</label>
-        <label><input class="especialidad" type="checkbox" value="Ortopedia y Traumatología"> Ortopedia y Traumatología</label>
-        <label><input class="especialidad" type="checkbox" value="Homeopatía"> Homeopatía</label>
-        <label><input class="especialidad" type="checkbox" value="Endocrinología"> Endocrinología</label>
-        <label><input class="especialidad" type="checkbox" value="Obesidad / No Dieta"> Obesidad / No Dieta</label>
-        <label><input class="especialidad" type="checkbox" value="Oftalmología"> Oftalmología</label>
-        <label><input class="especialidad" type="checkbox" value="Neumonología y Trast. del Sueño"> Neumonología y Trast. del Sueño</label>
-        <label><input class="especialidad" type="checkbox" value="Alergia y Asma"> Alergia y Asma</label>
-        <label><input class="especialidad" type="checkbox" value="Inmunología Clínica"> Inmunología Clínica</label>
-        <label><input class="especialidad" type="checkbox" value="Kinesiología"> Kinesiología</label>
-        <label><input class="especialidad" type="checkbox" value="Gastroenterología"> Gastroenterología</label>
-        <label><input class="especialidad" type="checkbox" value="Obstetricia"> Obstetricia</label>
-        <label><input class="especialidad" type="checkbox" value="Cirugía General"> Cirugía General</label>
-        <label><input class="especialidad" type="checkbox" value="Estética"> Estética</label>
-        <label><input class="especialidad" type="checkbox" value="Infectología"> Infectología</label>
-      </div>
+    <div class="form-group full-width">
+      <label>💬 Mensaje de WhatsApp</label>
+      <textarea id="mensajeWhatsApp" class="textarea-simple" rows="3" placeholder="Ej: Hola, le recordamos su turno en el Centro Medico Palacio"></textarea>
     </div>
 
-    <!-- TARJETA 3: DÍAS DE ATENCIÓN (Chips interactivos) -->
-    <div class="card">
-      <h2><span class="icon-title"></span> Días de Atención</h2>
-      <p class="hint-text">Selecciona los días para habilitar sus horarios automáticamente.</p>
-      <div class="dias-grid">
-        <label><input class="dia" type="checkbox" value="Lunes"> Lunes</label>
-        <label><input class="dia" type="checkbox" value="Martes"> Martes</label>
-        <label><input class="dia" type="checkbox" value="Miércoles"> Miércoles</label>
-        <label><input class="dia" type="checkbox" value="Jueves"> Jueves</label>
-        <label><input class="dia" type="checkbox" value="Viernes"> Viernes</label>
-        <label><input class="dia" type="checkbox" value="Sábado"> Sábado</label>
-        <label><input class="dia" type="checkbox" value="Domingo"> Domingo</label>
-      </div>
+    <div class="form-group full-width">
+      <label>📝 Detalle</label>
+      <div id="editorDetalle" style="height: 150px; background: var(--bg-input);"></div>
     </div>
 
-    <!-- TARJETA 4: HORARIOS (Se muestra/oculta dinámicamente) -->
-    <div class="card" id="card-horarios">
-      <h2><span class="icon-title"></span> Horarios</h2>
-      <div class="horarios-grid">
-        <div class="form-group horario-row" data-dia="lunes">
-          <label class="dia-label">Lunes</label>
-          <div class="time-inputs">
-            <input id="lunEntrada" type="time" title="Entrada">
-            <span class="time-separator">a</span>
-            <input id="lunSalida" type="time" title="Salida">
-          </div>
-        </div>
-        <div class="form-group horario-row" data-dia="martes">
-          <label class="dia-label">Martes</label>
-          <div class="time-inputs">
-            <input id="marEntrada" type="time">
-            <span class="time-separator">a</span>
-            <input id="marSalida" type="time">
-          </div>
-        </div>
-        <div class="form-group horario-row" data-dia="miercoles">
-          <label class="dia-label">Miércoles</label>
-          <div class="time-inputs">
-            <input id="mieEntrada" type="time">
-            <span class="time-separator">a</span>
-            <input id="mieSalida" type="time">
-          </div>
-        </div>
-        <div class="form-group horario-row" data-dia="jueves">
-          <label class="dia-label">Jueves</label>
-          <div class="time-inputs">
-            <input id="jueEntrada" type="time">
-            <span class="time-separator">a</span>
-            <input id="jueSalida" type="time">
-          </div>
-        </div>
-        <div class="form-group horario-row" data-dia="viernes">
-          <label class="dia-label">Viernes</label>
-          <div class="time-inputs">
-            <input id="vieEntrada" type="time">
-            <span class="time-separator">a</span>
-            <input id="vieSalida" type="time">
-          </div>
-        </div>
-        <div class="form-group horario-row" data-dia="sabado">
-          <label class="dia-label">Sábado</label>
-          <div class="time-inputs">
-            <input id="sabEntrada" type="time">
-            <span class="time-separator">a</span>
-            <input id="sabSalida" type="time">
-          </div>
-        </div>
-        <div class="form-group horario-row" data-dia="domingo">
-          <label class="dia-label">Domingo</label>
-          <div class="time-inputs">
-            <input id="domEntrada" type="time">
-            <span class="time-separator">a</span>
-            <input id="domSalida" type="time">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TARJETA 5: CONFIGURACIÓN DE AGENDA -->
-    <div class="card">
-      <h2><span class="icon-title">⚙️</span> Configuración de Agenda</h2>
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Ver Vacíos</label>
-          <select id="verVacios" class="select-primary">
-            <option>Con agenda completa</option>
-            <option>Mostrar huecos</option>
-            <option>Ocultar huecos</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Visible en Pantallas</label>
-          <select id="visiblePantallas" class="select-primary">
-            <option>SI</option>
-            <option>NO</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Turnos Por Internet</label>
-          <select id="turnosInternet" class="select-primary">
-            <option>Visible, pero no puede por Internet</option>
-            <option>Visible y puede por Internet</option>
-            <option>No visible</option>
-          </select>
-        </div>
-      </div>
+    <div class="form-group full-width">
+      <label>🌐 Mensaje Internet</label>
+      <div id="editorMensajeInternet" style="height: 150px; background: var(--bg-input);"></div>
     </div>
 
   </div>
+</div>
 
-  <div class="actions">
-    <button id="nuevoMedico" class="btn-nuevo">+ Nuevo Médico</button>
-    <button class="btn-cancelar">Cancelar</button>
-    <button class="btn-guardar">💾 Guardar Cambios</button>
-  </div>
+    </div>
 
-</main>
+    <div class="actions">
+      <button id="nuevoMedico" class="btn-nuevo">+ Nuevo Médico</button>
+      <button class="btn-cancelar">Cancelar</button>
+      <button class="btn-guardar">💾 Guardar Cambios</button>
+    </div>
 
-<script src="medicos.js"></script>
+  </main>
+
+  <script src="medicos.js"></script>
 </body>
 </html>

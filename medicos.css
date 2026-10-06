@@ -607,9 +607,240 @@ body {
   .btn-nuevo {
     margin-right: 0;
     width: 100%;
-    order: 3; /* Va al final en móvil */
+    order: 3; 
   }
   .btn-cancelar, .btn-guardar {
     width: 100%;
+  }
+}/* =========================================
+   BUSCADOR FILTRO (LIMPIO Y A LA IZQUIERDA)
+   ========================================= */
+
+#medicoSearch {
+  width: 280px; /* Más chico, no ocupa todo el ancho */
+  max-width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.25s ease;
+  margin-bottom: 12px;
+  margin-right: auto; /* Empuja todo a la izquierda */
+}
+
+#medicoSearch:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+#medicoSearch::placeholder {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+#medicoSelect {
+  width: 100%;
+}
+
+/* =========================================
+   LISTA DE MÉDICOS SIEMPRE VISIBLE CON BUSCADOR
+   ========================================= */
+
+#medicoSearch {
+  width: 100%;
+  padding: 14px 18px;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 12px;
+  color: var(--text-main);
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.25s ease;
+}
+
+#medicoSearch:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  background: var(--bg-card-hover);
+}
+
+#medicoSearch::placeholder {
+  color: var(--text-muted);
+}
+
+/* Contenedor de la lista */
+.medico-list-visible {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+/* Cada médico como chip/botón */
+.medico-list-visible .searchable-item {
+  padding: 12px 16px;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.medico-list-visible .searchable-item:hover {
+  border-color: var(--color-primary);
+  color: var(--text-main);
+  background: var(--bg-card-hover);
+  transform: translateY(-1px);
+}
+
+/* Médico seleccionado */
+.medico-list-visible .searchable-item.selected {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Cuando no hay resultados */
+.medico-list-visible .no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 30px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Scrollbar personalizado para la lista */
+.medico-list-visible::-webkit-scrollbar {
+  width: 6px;
+}
+
+.medico-list-visible::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.medico-list-visible::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 3px;
+}
+
+.medico-list-visible::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .medico-list-visible {
+    grid-template-columns: 1fr;
+    max-height: 300px;
+  }
+}
+
+
+/* =========================================
+   EDITORES DE TEXTO ENRIQUECIDO (QUILL)
+   ========================================= */
+
+/* Textarea simple (WhatsApp) */
+.textarea-simple {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg-input);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 10px;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  resize: vertical;
+  transition: all 0.25s ease;
+}
+
+.textarea-simple:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Contenedor de Quill */
+.ql-toolbar.ql-snow {
+  border: 1.5px solid var(--border-subtle) !important;
+  border-bottom: none !important;
+  border-radius: 10px 10px 0 0 !important;
+  background: var(--bg-card) !important;
+}
+
+.ql-container.ql-snow {
+  border: 1.5px solid var(--border-subtle) !important;
+  border-radius: 0 0 10px 10px !important;
+  background: var(--bg-input) !important;
+  color: var(--text-main) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14px !important;
+}
+
+.ql-editor {
+  min-height: 120px;
+  color: var(--text-main) !important;
+}
+
+.ql-editor.ql-blank::before {
+  color: var(--text-muted) !important;
+  font-style: normal !important;
+}
+
+/* Botones de la barra de herramientas */
+.ql-snow .ql-stroke {
+  stroke: var(--text-secondary) !important;
+}
+
+.ql-snow .ql-fill {
+  fill: var(--text-secondary) !important;
+}
+
+.ql-snow .ql-picker {
+  color: var(--text-secondary) !important;
+}
+
+.ql-snow .ql-picker-label:hover,
+.ql-snow .ql-picker-item:hover {
+  color: var(--color-primary) !important;
+}
+
+.ql-snow .ql-picker-label:hover .ql-stroke,
+.ql-snow .ql-picker-item:hover .ql-stroke {
+  stroke: var(--color-primary) !important;
+}
+
+.ql-snow .ql-picker-label:hover .ql-fill,
+.ql-snow .ql-picker-item:hover .ql-fill {
+  fill: var(--color-primary) !important;
+}
+
+.ql-snow .ql-active .ql-stroke {
+  stroke: var(--color-primary) !important;
+}
+
+.ql-snow .ql-active .ql-fill {
+  fill: var(--color-primary) !important;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .ql-toolbar.ql-snow,
+  .ql-container.ql-snow {
+    border-radius: 8px !important;
   }
 }

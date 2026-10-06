@@ -1,16 +1,16 @@
-// ==========================================
-// 1. BASE DE DATOS DE MÉDICOS
-// ==========================================
 const medicos = {
   "PALACIO MARCOS ANTONIO": {
     matricula: "1001", sistema: "1", consultorio: "1", factura: "1", tiempoMinimo: "30",
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Otorrinolaringología"], dias: ["Martes", "Miércoles", "Viernes"],
     horarios: {
-      lunesEntrada:"", lunesSalida:"", martesEntrada:"08:00", martesSalida:"12:00",
-      miercolesEntrada:"08:00", miercolesSalida:"12:00", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"08:00", viernesSalida:"12:00", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "08:00", martesMananaSalida: "12:00", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "08:00", miercolesMananaSalida: "12:00", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "08:00", viernesMananaSalida: "12:00", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "PALACIO GASTON ANTONIO": {
@@ -18,10 +18,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Otorrinolaringología"], dias: ["Lunes", "Martes", "Jueves", "Viernes"],
     horarios: {
-      lunesEntrada:"15:00", lunesSalida:"20:30", martesEntrada:"15:00", martesSalida:"20:30",
-      miercolesEntrada:"", miercolesSalida:"", juevesEntrada:"15:00", juevesSalida:"20:30",
-      viernesEntrada:"15:00", viernesSalida:"20:30", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "15:00", lunesTardeSalida: "20:30",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "15:00", martesTardeSalida: "20:30",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "15:00", juevesTardeSalida: "20:30",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "15:00", viernesTardeSalida: "20:30",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "GERARDO MARCOS": {
@@ -29,10 +32,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Cardiología"], dias: ["Lunes", "Viernes"],
     horarios: {
-      lunesEntrada:"08:00", lunesSalida:"13:00", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"", miercolesSalida:"", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"08:00", viernesSalida:"13:00", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "08:00", lunesMananaSalida: "13:00", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "08:00", viernesMananaSalida: "13:00", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "ZELARAYAN NORMA DANIELA": {
@@ -40,10 +46,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Gastroenterología"], dias: ["Martes", "Jueves"],
     horarios: {
-      lunesEntrada:"", lunesSalida:"", martesEntrada:"09:00", martesSalida:"13:00",
-      miercolesEntrada:"", miercolesSalida:"", juevesEntrada:"09:00", juevesSalida:"13:00",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "09:00", martesMananaSalida: "13:00", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "09:00", juevesMananaSalida: "13:00", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "PAZ JUAN": {
@@ -51,10 +60,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Neurología"], dias: ["Sábado"],
     horarios: {
-      lunesEntrada:"", lunesSalida:"", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"", miercolesSalida:"", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"08:00", sabadoSalida:"12:00",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "08:00", sabadoMananaSalida: "12:00", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "DIAZ VERONICA": {
@@ -62,10 +74,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Neurología"], dias: ["Miércoles"],
     horarios: {
-      lunesEntrada:"", lunesSalida:"", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"14:00", miercolesSalida:"19:00", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "14:00", miercolesTardeSalida: "19:00",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "LARA NORRY RAFAEL": {
@@ -73,10 +88,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Neurología"], dias: ["Lunes"],
     horarios: {
-      lunesEntrada:"09:00", lunesSalida:"13:00", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"", miercolesSalida:"", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "09:00", lunesMananaSalida: "13:00", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "MALDONADO PABLO RAMIRO": {
@@ -84,10 +102,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Reumatología"], dias: ["Miércoles"],
     horarios: {
-      lunesEntrada:"", lunesSalida:"", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"09:00", miercolesSalida:"14:00", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "09:00", miercolesMananaSalida: "14:00", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "MANZANO VIRGINIA PAULA": {
@@ -95,10 +116,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Clínica Médica"], dias: ["Martes"],
     horarios: {
-      lunesEntrada:"", lunesSalida:"", martesEntrada:"08:00", martesSalida:"13:00",
-      miercolesEntrada:"", miercolesSalida:"", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "08:00", martesMananaSalida: "13:00", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "ELIAS GRANE LOURDES": {
@@ -106,10 +130,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Infectología"], dias: ["Martes"],
     horarios: {
-      lunesEntrada:"", lunesSalida:"", martesEntrada:"14:00", martesSalida:"18:00",
-      miercolesEntrada:"", miercolesSalida:"", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "14:00", martesTardeSalida: "18:00",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "DIAZ ALVAREZ MARIA NOEL": {
@@ -117,10 +144,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Endocrinología"], dias: ["Miércoles"],
     horarios: {
-      lunesEntrada:"", lunesSalida:"", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"15:00", miercolesSalida:"20:00", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "15:00", miercolesTardeSalida: "20:00",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "CARRIZO GUSTAVO": {
@@ -128,10 +158,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Cirugía General"], dias: ["Lunes", "Miércoles", "Viernes"],
     horarios: {
-      lunesEntrada:"08:00", lunesSalida:"12:00", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"08:00", miercolesSalida:"12:00", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"08:00", viernesSalida:"12:00", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "08:00", lunesMananaSalida: "12:00", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "08:00", miercolesMananaSalida: "12:00", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "08:00", viernesMananaSalida: "12:00", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "PEDRAZA MARIELA": {
@@ -139,10 +172,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Psiquiatría"], dias: ["Miércoles"],
     horarios: {
-      lunesEntrada:"", lunesSalida:"", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"14:00", miercolesSalida:"18:00", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "14:00", miercolesTardeSalida: "18:00",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "SEPULVEDA MARIA ALEJANDRA": {
@@ -150,10 +186,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Psicología"], dias: ["Lunes", "Miércoles", "Viernes"],
     horarios: {
-      lunesEntrada:"10:00", lunesSalida:"16:00", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"10:00", miercolesSalida:"16:00", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"10:00", viernesSalida:"16:00", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "10:00", lunesMananaSalida: "16:00", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "10:00", miercolesMananaSalida: "16:00", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "10:00", viernesMananaSalida: "16:00", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "MOYANO MARIA EUGENIA": {
@@ -161,10 +200,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Ginecología", "Obstetricia"], dias: ["Lunes"],
     horarios: {
-      lunesEntrada:"09:00", lunesSalida:"14:00", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"", miercolesSalida:"", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "09:00", lunesMananaSalida: "14:00", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "NORRY GABRIEL": {
@@ -172,10 +214,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Dermatología"], dias: ["Miércoles"],
     horarios: {
-      lunesEntrada:"", lunesSalida:"", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"09:00", miercolesSalida:"13:00", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "09:00", miercolesMananaSalida: "13:00", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "KOLRICH FLORENCIA": {
@@ -183,10 +228,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Dermatología"], dias: ["Lunes"],
     horarios: {
-      lunesEntrada:"14:00", lunesSalida:"18:00", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"", miercolesSalida:"", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "14:00", lunesTardeSalida: "18:00",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "DE LA FUENTE JIMENA": {
@@ -194,10 +242,13 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Odontología"], dias: ["Lunes", "Viernes"],
     horarios: {
-      lunesEntrada:"16:00", lunesSalida:"20:30", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"", miercolesSalida:"", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"16:00", viernesSalida:"20:30", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "16:00", lunesTardeSalida: "20:30",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "16:00", viernesTardeSalida: "20:30",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   },
   "FERNANDEZ PAULINA": {
@@ -205,31 +256,36 @@ const medicos = {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: ["Nutricionista"], dias: ["Lunes"],
     horarios: {
-      lunesEntrada:"08:00", lunesSalida:"13:00", martesEntrada:"", martesSalida:"",
-      miercolesEntrada:"", miercolesSalida:"", juevesEntrada:"", juevesSalida:"",
-      viernesEntrada:"", viernesSalida:"", sabadoEntrada:"", sabadoSalida:"",
-      domingoEntrada:"", domingoSalida:""
+      lunesMananaEntrada: "08:00", lunesMananaSalida: "13:00", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
     }
   }
 };
 
 // ==========================================
-// 2. MAPEO DE DÍAS (¡ESTA ERA LA PIEZA FALTANTE!)
+// 2. MAPEO DE DÍAS (Actualizado para Mañana/Tarde)
 // ==========================================
 const diasConfig = {
-  "Lunes":     { dataDia: "lunes",     entrada: "lunEntrada", salida: "lunSalida", keyHorario: "lunes" },
-  "Martes":    { dataDia: "martes",    entrada: "marEntrada", salida: "marSalida", keyHorario: "martes" },
-  "Miércoles": { dataDia: "miercoles", entrada: "mieEntrada", salida: "mieSalida", keyHorario: "miercoles" },
-  "Jueves":    { dataDia: "jueves",    entrada: "jueEntrada", salida: "jueSalida", keyHorario: "jueves" },
-  "Viernes":   { dataDia: "viernes",   entrada: "vieEntrada", salida: "vieSalida", keyHorario: "viernes" },
-  "Sábado":    { dataDia: "sabado",    entrada: "sabEntrada", salida: "sabSalida", keyHorario: "sabado" },
-  "Domingo":   { dataDia: "domingo",   entrada: "domEntrada", salida: "domSalida", keyHorario: "domingo" }
+  "Lunes":     { dataDia: "lunes",     mananaE: "lunMananaEntrada", mananaS: "lunMananaSalida", tardeE: "lunTardeEntrada", tardeS: "lunTardeSalida", key: "lunes" },
+  "Martes":    { dataDia: "martes",    mananaE: "marMananaEntrada", mananaS: "marMananaSalida", tardeE: "marTardeEntrada", tardeS: "marTardeSalida", key: "martes" },
+  "Miércoles": { dataDia: "miercoles", mananaE: "mieMananaEntrada", mananaS: "mieMananaSalida", tardeE: "mieTardeEntrada", tardeS: "mieTardeSalida", key: "miercoles" },
+  "Jueves":    { dataDia: "jueves",    mananaE: "jueMananaEntrada", mananaS: "jueMananaSalida", tardeE: "jueTardeEntrada", tardeS: "jueTardeSalida", key: "jueves" },
+  "Viernes":   { dataDia: "viernes",   mananaE: "vieMananaEntrada", mananaS: "vieMananaSalida", tardeE: "vieTardeEntrada", tardeS: "vieTardeSalida", key: "viernes" },
+  "Sábado":    { dataDia: "sabado",    mananaE: "sabMananaEntrada", mananaS: "sabMananaSalida", tardeE: "sabTardeEntrada", tardeS: "sabTardeSalida", key: "sabado" },
+  "Domingo":   { dataDia: "domingo",   mananaE: "domMananaEntrada", mananaS: "domMananaSalida", tardeE: "domTardeEntrada", tardeS: "domTardeSalida", key: "domingo" }
 };
 
 // ==========================================
 // 3. ELEMENTOS DEL DOM
 // ==========================================
+const medicoSearch = document.getElementById("medicoSearch");
 const medicoSelect = document.getElementById("medicoSelect");
+
 const matricula = document.getElementById("matricula");
 const sistema = document.getElementById("sistema");
 const consultorio = document.getElementById("consultorio");
@@ -239,7 +295,6 @@ const verVacios = document.getElementById("verVacios");
 const visiblePantallas = document.getElementById("visiblePantallas");
 const turnosInternet = document.getElementById("turnosInternet");
 const formContainer = document.getElementById("form-container");
-
 // ==========================================
 // 4. TEMA OSCURO / CLARO
 // ==========================================
@@ -278,33 +333,71 @@ function actualizarVisibilidadHorarios() {
       } else {
         horarioRow.classList.remove("activo");
         horarioRow.dataset.scrolled = "";
-        const entradaInput = document.getElementById(config.entrada);
-        const salidaInput = document.getElementById(config.salida);
-        if (entradaInput) entradaInput.value = "";
-        if (salidaInput) salidaInput.value = "";
+        // Limpiar inputs al desmarcar
+        document.getElementById(config.mananaE).value = "";
+        document.getElementById(config.mananaS).value = "";
+        document.getElementById(config.tardeE).value = "";
+        document.getElementById(config.tardeS).value = "";
       }
     }
   });
 }
 
-// Escuchar cambios en los checkboxes de días
 document.querySelectorAll(".dia").forEach(checkbox => {
   checkbox.addEventListener("change", actualizarVisibilidadHorarios);
 });
+// ==========================================
+// 6. BUSCADOR DE MÉDICOS (FILTRO PARA SELECT NATIVO)
+// ==========================================
 
-// ==========================================
-// 6. FUNCIONES DE CARGA Y LIMPIEZA
-// ==========================================
-function cargarListaMedicos() {
+// Guardamos la lista original de médicos para poder filtrar siempre desde el total
+const listaOriginalMedicos = Object.keys(medicos);
+
+function filtrarMedicos(texto) {
+  const filtro = texto.toLowerCase().trim();
+  
+  // Limpiamos el select actual
   medicoSelect.innerHTML = '<option value="">-- Seleccione un médico --</option>';
-  Object.keys(medicos).forEach(nombre => {
+  
+  // Filtramos la lista original
+  const filtrados = listaOriginalMedicos.filter(nombre => 
+    nombre.toLowerCase().includes(filtro)
+  );
+  
+  // Regeneramos las opciones
+  filtrados.forEach(nombre => {
     const option = document.createElement("option");
     option.value = nombre;
     option.textContent = nombre;
     medicoSelect.appendChild(option);
   });
+  
+  // Si solo queda un resultado, lo seleccionamos automáticamente
+  if (filtrados.length === 1 && filtro.length > 2) {
+    medicoSelect.value = filtrados[0];
+    cargarMedico();
+  }
 }
 
+// Escuchar lo que escribe el usuario
+medicoSearch.addEventListener("input", (e) => {
+  filtrarMedicos(e.target.value);
+});
+
+// Cuando el usuario selecciona algo del dropdown
+medicoSelect.addEventListener("change", () => {
+  if (medicoSelect.value) {
+    cargarMedico();
+    // Limpiar el buscador después de seleccionar
+    medicoSearch.value = ""; 
+  }
+});
+
+// Cargar la lista completa al inicio
+filtrarMedicos("");
+// ==========================================
+// 7. FUNCIONES DE CARGA Y LIMPIEZA
+// ==========================================
 function limpiarCheckboxes() {
   document.querySelectorAll(".especialidad, .dia").forEach(check => {
     check.checked = false;
@@ -313,13 +406,20 @@ function limpiarCheckboxes() {
 }
 
 function cargarMedico() {
-  const nombre = medicoSelect.value;
+  // ✅ CORREGIDO: Usar medicoSelect.value en lugar de medicoSelectHidden
+  const nombre = medicoSelect.value; 
   const medico = medicos[nombre];
 
   if (!medico) {
     limpiarCheckboxes();
     matricula.value = ""; sistema.value = ""; consultorio.value = "";
     factura.value = ""; tiempoMinimo.value = "";
+    
+    // Limpiar editores si no hay médico seleccionado
+    if (typeof quillDetalle !== 'undefined') quillDetalle.setText('');
+    if (typeof quillMensajeInternet !== 'undefined') quillMensajeInternet.setText('');
+    const msgWA = document.getElementById('mensajeWhatsApp');
+    if (msgWA) msgWA.value = '';
     return;
   }
 
@@ -355,26 +455,30 @@ function cargarMedico() {
     if (medico.horarios) {
       Object.keys(diasConfig).forEach(diaNombre => {
         const config = diasConfig[diaNombre];
-        const keyEntrada = config.keyHorario + "Entrada";
-        const keySalida = config.keyHorario + "Salida";
+        const h = medico.horarios;
         
-        const inputEntrada = document.getElementById(config.entrada);
-        const inputSalida = document.getElementById(config.salida);
-        
-        if (inputEntrada && medico.horarios[keyEntrada]) inputEntrada.value = medico.horarios[keyEntrada];
-        if (inputSalida && medico.horarios[keySalida]) inputSalida.value = medico.horarios[keySalida];
+        const inMananaE = document.getElementById(config.mananaE);
+        const inMananaS = document.getElementById(config.mananaS);
+        if (inMananaE && h[config.key + "MananaEntrada"]) inMananaE.value = h[config.key + "MananaEntrada"];
+        if (inMananaS && h[config.key + "MananaSalida"]) inMananaS.value = h[config.key + "MananaSalida"];
+
+        const inTardeE = document.getElementById(config.tardeE);
+        const inTardeS = document.getElementById(config.tardeS);
+        if (inTardeE && h[config.key + "TardeEntrada"]) inTardeE.value = h[config.key + "TardeEntrada"];
+        if (inTardeS && h[config.key + "TardeSalida"]) inTardeS.value = h[config.key + "TardeSalida"];
       });
     }
 
-    actualizarVisibilidadHorarios();
+    // ✅ CORREGIDO: ¡Aquí se cargan los editores de texto!
+    cargarContenidoEditores(medico);
 
+    actualizarVisibilidadHorarios();
     formContainer.style.opacity = "1";
     formContainer.style.transform = "translateY(0)";
   }, 150);
 }
-
 // ==========================================
-// 7. NUEVO MÉDICO
+// 8. NUEVO MÉDICO
 // ==========================================
 document.getElementById("nuevoMedico").addEventListener("click", () => {
   const nombre = prompt("Ingrese el nombre completo del nuevo médico:");
@@ -382,7 +486,8 @@ document.getElementById("nuevoMedico").addEventListener("click", () => {
 
   if (medicos[nombre]) {
     alert("Este médico ya existe en el sistema.");
-    medicoSelect.value = nombre;
+    medicoSearch.value = nombre;
+    medicoSelect.value = nombre; 
     cargarMedico();
     return;
   }
@@ -392,26 +497,103 @@ document.getElementById("nuevoMedico").addEventListener("click", () => {
     verVacios: "Con agenda completa", visiblePantallas: "SI", turnosInternet: "Visible, pero no puede por Internet",
     especialidades: [], dias: [],
     horarios: {
-      lunesEntrada: "", lunesSalida: "", martesEntrada: "", martesSalida: "",
-      miercolesEntrada: "", miercolesSalida: "", juevesEntrada: "", juevesSalida: "",
-      viernesEntrada: "", viernesSalida: "", sabadoEntrada: "", sabadoSalida: "",
-      domingoEntrada: "", domingoSalida: ""
-    }
+      lunesMananaEntrada: "", lunesMananaSalida: "", lunesTardeEntrada: "", lunesTardeSalida: "",
+      martesMananaEntrada: "", martesMananaSalida: "", martesTardeEntrada: "", martesTardeSalida: "",
+      miercolesMananaEntrada: "", miercolesMananaSalida: "", miercolesTardeEntrada: "", miercolesTardeSalida: "",
+      juevesMananaEntrada: "", juevesMananaSalida: "", juevesTardeEntrada: "", juevesTardeSalida: "",
+      viernesMananaEntrada: "", viernesMananaSalida: "", viernesTardeEntrada: "", viernesTardeSalida: "",
+      sabadoMananaEntrada: "", sabadoMananaSalida: "", sabadoTardeEntrada: "", sabadoTardeSalida: "",
+      domingoMananaEntrada: "", domingoMananaSalida: "", domingoTardeEntrada: "", domingoTardeSalida: ""
+    },
+    detalle: "",
+    mensajeInternet: "",
+    mensajeWhatsApp: ""
   };
 
-  cargarListaMedicos();
-  medicoSelect.value = nombre;
-  cargarMedico();
+  medicoSearch.value = "";
+  medicoSelect.value = nombre; 
+  limpiarCheckboxes();
+  matricula.value = ""; sistema.value = "1"; consultorio.value = "";
+  factura.value = "1"; tiempoMinimo.value = "30";
+  
+  // Limpiar editores para el nuevo médico
+  if (typeof quillDetalle !== 'undefined') quillDetalle.setText('');
+  if (typeof quillMensajeInternet !== 'undefined') quillMensajeInternet.setText('');
+  const msgWA = document.getElementById('mensajeWhatsApp');
+  if (msgWA) msgWA.value = '';
+
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // ==========================================
-// 8. INICIALIZACIÓN
+// 9. INICIALIZACIÓN
 // ==========================================
-medicoSelect.addEventListener("change", cargarMedico);
-cargarListaMedicos();
+
+filtrarMedicos("");
 
 if (Object.keys(medicos).length > 0) {
-  medicoSelect.selectedIndex = 1;
+  const primerMedico = Object.keys(medicos)[0];
+  medicoSelect.value = primerMedico;
   cargarMedico();
+}
+
+// ==========================================
+// 10. EDITORES DE TEXTO ENRIQUECIDO (QUILL)
+// ==========================================
+
+// Configuración de la barra de herramientas (igual a la de la imagen)
+const toolbarOptions = [
+  [{ 'header': [1, 2, 3, false] }],
+  ['bold', 'italic', 'underline'],
+  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+  [{ 'align': [] }],
+  ['clean'] // Botón para limpiar formato
+];
+
+// Inicializar editor "Detalle"
+const quillDetalle = new Quill('#editorDetalle', {
+  theme: 'snow',
+  placeholder: 'Escribe los detalles del médico...',
+  modules: {
+    toolbar: toolbarOptions
+  }
+});
+
+// Inicializar editor "Mensaje Internet"
+const quillMensajeInternet = new Quill('#editorMensajeInternet', {
+  theme: 'snow',
+  placeholder: 'Mensaje para mostrar en internet...',
+  modules: {
+    toolbar: toolbarOptions
+  }
+});
+
+// Función para cargar el contenido de los editores al seleccionar un médico
+function cargarContenidoEditores(medico) {
+  if (medico.detalle) {
+    quillDetalle.root.innerHTML = medico.detalle;
+  } else {
+    quillDetalle.setText('');
+  }
+  
+  if (medico.mensajeInternet) {
+    quillMensajeInternet.root.innerHTML = medico.mensajeInternet;
+  } else {
+    quillMensajeInternet.setText('');
+  }
+  
+  // Mensaje WhatsApp (textarea simple)
+  const mensajeWhatsApp = document.getElementById('mensajeWhatsApp');
+  if (mensajeWhatsApp) {
+    mensajeWhatsApp.value = medico.mensajeWhatsApp || '';
+  }
+}
+
+// Función para guardar el contenido de los editores (útil cuando implementes el botón Guardar)
+function guardarContenidoEditores() {
+  return {
+    detalle: quillDetalle.root.innerHTML,
+    mensajeInternet: quillMensajeInternet.root.innerHTML,
+    mensajeWhatsApp: document.getElementById('mensajeWhatsApp').value
+  };
 }
