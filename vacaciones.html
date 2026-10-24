@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vacaciones o Cambio de Horario - Centro Médico Palacio</title>
+  <link rel="stylesheet" href="vacaciones.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER: Navegación principal -->
+  <header class="header">
+    <div class="header-left">
+      <p class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L12 22M17 7H9.5C8.57174 7 7.6815 7.36875 7.02513 8.02513C6.36875 8.6815 6 9.57174 6 10.5C6 11.4283 6.36875 12.3185 7.02513 12.9749C7.6815 13.6313 8.57174 14 9.5 14H14.5C15.4283 14 16.3185 14.3687 16.9749 15.0251C17.6313 15.6815 18 16.5717 18 17.5C18 18.4283 17.6313 19.3185 16.9749 19.9749C16.3185 20.6313 15.4283 21 14.5 21H6"/>
+        </svg>
+      </p>
+    </div>
+    <nav class="nav-menu">
+      <a href="turnos.html">Turnos</a>
+      <a href="pacientes.html">Pacientes</a>
+      <a href="#">Consultorio</a>
+      <a href="#">Recetas</a>
+      <a href="index.html">Administración</a>
+      <a href="sistemas.html">Sistemas</a>
+      <a href="#">Salir</a>
+    </nav>
+    <div class="header-right">
+      <span class="user-name" id="userNameDisplay">PALACIO GASTON ANTONIO</span>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+        <span class="icon">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- BARRA DE BÚSQUEDA -->
+  <section class="search-bar">
+    <input type="text" placeholder="Nombre del Paciente" class="input-paciente">
+    <select class="select-obra">
+      <option value="">Obras Sociales</option>
+      <option value="Particular">Particular</option>
+      <option value="ACA SALUD">ACA SALUD</option>
+      <option value="AMFFA">AMFFA</option>
+      <option value="AMSTERDAN SALUD">AMSTERDAN SALUD</option>
+      <option value="APLA">APLA</option>
+      <option value="APM">APM</option>
+      <option value="ASISPRE">ASISPRE</option>
+      <option value="ASISTIR">ASISTIR</option>
+      <option value="ASISTIR-OSPACA">ASISTIR-OSPACA</option>
+      <option value="ASOC. ECLESIASTICA SAN PEDRO">ASOC. ECLESIASTICA SAN PEDRO</option>
+      <option value="ASUNT">ASUNT</option>
+      <option value="ASUNT (Consulta Especial)">ASUNT (Consulta Especial)</option>
+      <option value="BOREAL">BOREAL</option>
+      <option value="BOREAL.NET">BOREAL.NET</option>
+      <option value="BRAMED SRL">BRAMED SRL</option>
+      <option value="CANILLITAS FLORENCIO SANCHEZ">CANILLITAS FLORENCIO SANCHEZ</option>
+      <option value="CLINICA MAYO">CLINICA MAYO</option>
+      <option value="COLMED OSMEDICA">COLMED OSMEDICA</option>
+      <option value="COLMED TODOS MENOS OSMEDICA">COLMED TODOS MENOS OSMEDICA</option>
+      <option value="COOP. TRABAJADORES AGRICOLAS">COOP. TRABAJADORES AGRICOLAS</option>
+      <option value="COOP. TRABAJADORES EVENTUR">COOP. TRABAJADORES EVENTUR</option>
+      <option value="COOP. TRABAJADORES HUMANA">COOP. TRABAJADORES HUMANA</option>
+      <option value="COOP. TRABAJADORES INSTALADORES">COOP. TRABAJADORES INSTALADORES</option>
+      <option value="CRISTAL SALUD - APPI SRL">CRISTAL SALUD - APPI SRL</option>
+      <option value="DASUTEN">DASUTEN</option>
+      <option value="DIARIOS Y REVISTAS">DIARIOS Y REVISTAS</option>
+      <option value="DIBA">DIBA</option>
+      <option value="FARMACIA (GAPRESA)">FARMACIA (GAPRESA)</option>
+      <option value="FOTIA - OSPAAТ">FOTIA - OSPAAТ</option>
+      <option value="FUERZA AEREA">FUERZA AEREA</option>
+      <option value="GALENO">GALENO</option>
+      <option value="GALENO CONSULTIN GROUP">GALENO CONSULTIN GROUP</option>
+      <option value="GALVEZ">GALVEZ</option>
+      <option value="INTERSALUD">INTERSALUD</option>
+      <option value="IOSE">IOSE</option>
+      <option value="JERARQUICOS SALUD">JERARQUICOS SALUD</option>
+      <option value="LUIS PASTEUR">LUIS PASTEUR</option>
+      <option value="MAPFRE">MAPFRE</option>
+      <option value="MEDICUS">MEDICUS</option>
+      <option value="MEDIFE">MEDIFE</option>
+      <option value="MITA">MITA</option>
+      <option value="MORA">MORA</option>
+      <option value="MUTUAL 10 DE ABRIL">MUTUAL 10 DE ABRIL</option>
+      <option value="MUTUAL PERSONAL AGUA Y ENERGIA">MUTUAL PERSONAL AGUA Y ENERGIA</option>
+      <option value="NOR MEDICA">NOR MEDICA</option>
+      <option value="NORTE SALUD">NORTE SALUD</option>
+      <option value="OMINT">OMINT</option>
+      <option value="OPDEA">OPDEA</option>
+      <option value="ORDEN PRESTADA">ORDEN PRESTADA</option>
+      <option value="OSACRA">OSACRA</option>
+      <option value="OSAPM">OSAPM</option>
+      <option value="OSDDIP">OSDDIP</option>
+      <option value="OSDE">OSDE</option>
+      <option value="OSDOP">OSDOP</option>
+      <option value="OSETYA">OSETYA</option>
+      <option value="OSFATUN">OSFATUN</option>
+      <option value="OSJERA (Jerarquicos Rep. Argentina)">OSJERA (Jerarquicos Rep. Argentina)</option>
+      <option value="OSMATA">OSMATA</option>
+      <option value="OSMITA">OSMITA</option>
+      <option value="OSPA (Personal Aeronautico)">OSPA (Personal Aeronautico)</option>
+      <option value="OSPECOM">OSPECOM</option>
+      <option value="OSPEGAP (Petroleros)">OSPEGAP (Petroleros)</option>
+      <option value="OSPERSAAMS">OSPERSAAMS</option>
+      <option value="OSPERYHRA">OSPERYHRA</option>
+      <option value="OSPES (Estaciones de Servicio)">OSPES (Estaciones de Servicio)</option>
+      <option value="OSPIA AZUCARERA">OSPIA AZUCARERA</option>
+      <option value="OSPIL (Lecheros)">OSPIL (Lecheros)</option>
+      <option value="OSPIP">OSPIP</option>
+      <option value="OSPLAD">OSPLAD</option>
+      <option value="OSPRERA">OSPRERA</option>
+      <option value="OSPTA (Tecnico Aeronautico)">OSPTA (Tecnico Aeronautico)</option>
+      <option value="OSSEG (SEGUROS)">OSSEG (SEGUROS)</option>
+      <option value="OSSEIF (Ing. La Fronterita)">OSSEIF (Ing. La Fronterita)</option>
+      <option value="OSSEIÑ (Ing. Ñuñorco)">OSSEIÑ (Ing. Ñuñorco)</option>
+      <option value="PAMI">PAMI</option>
+      <option value="PARA REINTEGRO">PARA REINTEGRO</option>
+      <option value="PARQUE SALUD">PARQUE SALUD</option>
+      <option value="PARTICULAR">PARTICULAR</option>
+      <option value="PATRONES DE CABOTAJE">PATRONES DE CABOTAJE</option>
+      <option value="PODER JUDICIAL">PODER JUDICIAL</option>
+      <option value="POLICIA FEDERAL">POLICIA FEDERAL</option>
+      <option value="PRENSA">PRENSA</option>
+      <option value="PREVENCION SALUD">PREVENCION SALUD</option>
+      <option value="RED DE SEGUROS MEDICOS">RED DE SEGUROS MEDICOS</option>
+      <option value="SADAIC">SADAIC</option>
+      <option value="SANATORIO ROCA">SANATORIO ROCA</option>
+      <option value="SANATORIO SARMIENTO">SANATORIO SARMIENTO</option>
+      <option value="SANCOR SALUD">SANCOR SALUD</option>
+      <option value="SEGURO ESOLAR DE LA PROV.">SEGURO ESOLAR DE LA PROV.</option>
+      <option value="SERRA">SERRA</option>
+      <option value="SERVESALUD">SERVESALUD</option>
+      <option value="SIN CARGO">SIN CARGO</option>
+      <option value="SIN COPAGO PEDIATRIA">SIN COPAGO PEDIATRIA</option>
+      <option value="SOREMER">SOREMER</option>
+      <option value="SUBOFICIALES RETIRADOS">SUBOFICIALES RETIRADOS</option>
+      <option value="SUBSIDIO DE SALUD">SUBSIDIO DE SALUD</option>
+      <option value="SWISS MEDICAL">SWISS MEDICAL</option>
+      <option value="TV SALUD">TV SALUD</option>
+      <option value="UNION PERSONAL">UNION PERSONAL</option>
+      <option value="UOM (OSUOMRA-Forjar Salud)">UOM (OSUOMRA-Forjar Salud)</option>
+      <option value="UP Union Personal">UP Union Personal</option>
+      <option value="UTA">UTA</option>
+    </select>
+    <button class="btn-buscar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;margin-right:6px;">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      Buscar
+    </button>
+  </section>
+
+  <main class="main-content">
+    
+    <!-- BOTÓN VOLVER -->
+    <div class="back-button-container">
+      <button class="btn-volver" onclick="window.history.back()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;margin-right:8px;">
+          <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+        </svg>
+        VOLVER ATRÁS
+      </button>
+    </div>
+
+    <h1 class="page-title">Lista de Vacaciones o Cambio de Horario</h1>
+
+    <!-- FILTROS -->
+    <div class="filters-container">
+      <div class="filter-group">
+        <label class="filter-label">Filtro Por medico</label>
+        <select class="filter-select" id="filtroMedico">
+          <option value="">Todos</option>
+          <!-- 
+            ============================================================
+            TODO: CARGAR MÉDICOS DESDE BASE DE DATOS
+            ============================================================
+            Aquí debe ir la lógica para cargar la lista de médicos.
+            Ejemplo:
+            <option value="1">Dr. García</option>
+            <option value="2">Dra. Martínez</option>
+          -->
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">Fecha</label>
+        <div class="date-selects">
+          <select class="date-select" id="filtroDia">
+            <option value="">Día</option>
+            <!-- TODO: Generar días 1-31 -->
+          </select>
+          <select class="date-select" id="filtroMes">
+            <option value="">Mes</option>
+            <!-- TODO: Generar meses -->
+          </select>
+          <select class="date-select" id="filtroAnio">
+            <option value="">Año</option>
+            <!-- TODO: Generar años -->
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-filtrar" id="btnFiltrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;margin-right:6px;">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+        </svg>
+        Filtrar
+      </button>
+    </div>
+
+    <!-- BOTÓN NUEVO -->
+    <div class="action-container">
+      <button class="btn-nuevo" id="btnNuevo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;margin-right:8px;">
+          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        Nuevas Vacaciones o Cambio de Horario
+      </button>
+    </div>
+
+  </main>
+
+  <!-- TABLA DE VACACIONES/CAMBIOS -->
+  <div class="table-section">
+    <div class="table-container">
+      <table class="vacaciones-table">
+        <thead>
+          <tr>
+            <th>Médico</th>
+            <th>Desde</th>
+            <th>Hasta</th>
+            <th>Tipo</th>
+            <th>Detalle</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaVacaciones">
+          <!-- 
+            ============================================================
+            TODO: CARGA DE VACACIONES/CAMBIOS DE HORARIO
+            ============================================================
+            Aquí debe ir la lógica para cargar las vacaciones y cambios
+            de horario de los médicos.
+            
+            Cada fila debe tener la siguiente estructura:
+            
+            <tr data-vacacion-id="ID">
+              <td>NOMBRE_DEL_MÉDICO</td>
+              <td>FECHA_DESDE</td>
+              <td>FECHA_HASTA</td>
+              <td>TIPO (Vacaciones/Cambio de Horario)</td>
+              <td>DETALLE_O_MOTIVO</td>
+              <td>
+                <button class="btn-icon btn-edit" title="Editar">...</button>
+                <button class="btn-icon btn-delete" title="Eliminar">...</button>
+              </td>
+            </tr>
+            
+            Si no hay registros, mostrar el estado vacío con id="estadoVacio"
+            ============================================================
+          -->
+        </tbody>
+      </table>
+
+      <!-- ESTADO VACÍO -->
+      <div class="empty-state" id="estadoVacio">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:64px;height:64px;opacity:0.4;">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <h3>No hay vacaciones o cambios de horario registrados</h3>
+        <p>Los registros aparecerán aquí.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ==========================================
+    // TEMA OSCURO / CLARO
+    // ==========================================
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const iconSun = document.querySelector('.icon-sun');
+    const iconMoon = document.querySelector('.icon-moon');
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      if (theme === 'dark') {
+        iconSun.style.display = 'none';
+        iconMoon.style.display = 'block';
+      } else {
+        iconSun.style.display = 'block';
+        iconMoon.style.display = 'none';
+      }
+    }
+
+    // ==========================================
+    // TODO: LÓGICA DE FILTROS Y CARGA DE DATOS
+    // ==========================================
+    // Aquí debe ir la lógica para:
+    // 1. Cargar médicos en el select de filtro
+    // 2. Generar opciones de días, meses y años
+    // 3. Filtrar vacaciones/cambios por médico y fecha
+    // 4. Cargar la tabla con los registros
+    // 5. Abrir modal para nuevo registro
+    // 6. Editar/Eliminar registros
+
+    document.getElementById('btnFiltrar').addEventListener('click', () => {
+      console.log('Filtrar vacaciones/cambios');
+      // TODO: Implementar filtrado
+    });
+
+    document.getElementById('btnNuevo').addEventListener('click', () => {
+      console.log('Nueva vacaciones o cambio de horario');
+      // TODO: Abrir modal de nuevo registro
+    });
+  </script>
+</body>
+</html>

@@ -6,28 +6,39 @@
   <title>ADM Médicos</title>
   <link rel="stylesheet" href="medicos.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
-<script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+  <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+  <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
 </head>
 <body>
 
   <header class="header">
     <div class="header-left">
-      <p class="logo-icon">⚕</p>
+      <p class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L12 22M17 7H9.5C8.57174 7 7.6815 7.36875 7.02513 8.02513C6.36875 8.6815 6 9.57174 6 10.5C6 11.4283 6.36875 12.3185 7.02513 12.9749C7.6815 13.6313 8.57174 14 9.5 14H14.5C15.4283 14 16.3185 14.3687 16.9749 15.0251C17.6313 15.6815 18 16.5717 18 17.5C18 18.4283 17.6313 19.3185 16.9749 19.9749C16.3185 20.6313 15.4283 21 14.5 21H6"/>
+        </svg>
+      </p>
     </div>
     <nav class="nav-menu">
-      <a href="#">Turnos</a>
-      <a href="#">Pacientes</a>
+      <a href="turnos.html">Turnos</a>
+      <a href="pacientes.html">Pacientes</a>
       <a href="#">Consultorio</a>
       <a href="#">Recetas</a>
-      <a href="#" class="active">Administración</a>
-      <a href="#">Sistemas</a>
+      <a href="index.html" class="active">Administración</a>
+      <a href="sistemas.html">Sistemas</a>
       <a href="#">Salir</a>
     </nav>
     <div class="header-right">
       <span class="user-name">PALACIO GASTON ANTONIO</span>
       <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-        <span class="icon">☀️</span>
+        <span class="icon">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </span>
       </button>
     </div>
   </header>
@@ -35,9 +46,116 @@
   <section class="search-bar">
     <input type="text" placeholder="Nombre del Paciente" class="input-paciente">
     <select class="select-obra">
-      <option>Obras Sociales</option>
+      <option value="">Obras Sociales</option>
+      <option value="Particular">Particular</option>
+      <option value="ACA SALUD">ACA SALUD</option>
+      <option value="AMFFA">AMFFA</option>
+      <option value="AMSTERDAN SALUD">AMSTERDAN SALUD</option>
+      <option value="APLA">APLA</option>
+      <option value="APM">APM</option>
+      <option value="ASISPRE">ASISPRE</option>
+      <option value="ASISTIR">ASISTIR</option>
+      <option value="ASISTIR-OSPACA">ASISTIR-OSPACA</option>
+      <option value="ASOC. ECLESIASTICA SAN PEDRO">ASOC. ECLESIASTICA SAN PEDRO</option>
+      <option value="ASUNT">ASUNT</option>
+      <option value="ASUNT (Consulta Especial)">ASUNT (Consulta Especial)</option>
+      <option value="BOREAL">BOREAL</option>
+      <option value="BOREAL.NET">BOREAL.NET</option>
+      <option value="BRAMED SRL">BRAMED SRL</option>
+      <option value="CANILLITAS FLORENCIO SANCHEZ">CANILLITAS FLORENCIO SANCHEZ</option>
+      <option value="CLINICA MAYO">CLINICA MAYO</option>
+      <option value="COLMED OSMEDICA">COLMED OSMEDICA</option>
+      <option value="COLMED TODOS MENOS OSMEDICA">COLMED TODOS MENOS OSMEDICA</option>
+      <option value="COOP. TRABAJADORES AGRICOLAS">COOP. TRABAJADORES AGRICOLAS</option>
+      <option value="COOP. TRABAJADORES EVENTUR">COOP. TRABAJADORES EVENTUR</option>
+      <option value="COOP. TRABAJADORES HUMANA">COOP. TRABAJADORES HUMANA</option>
+      <option value="COOP. TRABAJADORES INSTALADORES">COOP. TRABAJADORES INSTALADORES</option>
+      <option value="CRISTAL SALUD - APPI SRL">CRISTAL SALUD - APPI SRL</option>
+      <option value="DASUTEN">DASUTEN</option>
+      <option value="DIARIOS Y REVISTAS">DIARIOS Y REVISTAS</option>
+      <option value="DIBA">DIBA</option>
+      <option value="FARMACIA (GAPRESA)">FARMACIA (GAPRESA)</option>
+      <option value="FOTIA - OSPAAТ">FOTIA - OSPAAТ</option>
+      <option value="FUERZA AEREA">FUERZA AEREA</option>
+      <option value="GALENO">GALENO</option>
+      <option value="GALENO CONSULTIN GROUP">GALENO CONSULTIN GROUP</option>
+      <option value="GALVEZ">GALVEZ</option>
+      <option value="INTERSALUD">INTERSALUD</option>
+      <option value="IOSE">IOSE</option>
+      <option value="JERARQUICOS SALUD">JERARQUICOS SALUD</option>
+      <option value="LUIS PASTEUR">LUIS PASTEUR</option>
+      <option value="MAPFRE">MAPFRE</option>
+      <option value="MEDICUS">MEDICUS</option>
+      <option value="MEDIFE">MEDIFE</option>
+      <option value="MITA">MITA</option>
+      <option value="MORA">MORA</option>
+      <option value="MUTUAL 10 DE ABRIL">MUTUAL 10 DE ABRIL</option>
+      <option value="MUTUAL PERSONAL AGUA Y ENERGIA">MUTUAL PERSONAL AGUA Y ENERGIA</option>
+      <option value="NOR MEDICA">NOR MEDICA</option>
+      <option value="NORTE SALUD">NORTE SALUD</option>
+      <option value="OMINT">OMINT</option>
+      <option value="OPDEA">OPDEA</option>
+      <option value="ORDEN PRESTADA">ORDEN PRESTADA</option>
+      <option value="OSACRA">OSACRA</option>
+      <option value="OSAPM">OSAPM</option>
+      <option value="OSDDIP">OSDDIP</option>
+      <option value="OSDE">OSDE</option>
+      <option value="OSDOP">OSDOP</option>
+      <option value="OSETYA">OSETYA</option>
+      <option value="OSFATUN">OSFATUN</option>
+      <option value="OSJERA (Jerarquicos Rep. Argentina)">OSJERA (Jerarquicos Rep. Argentina)</option>
+      <option value="OSMATA">OSMATA</option>
+      <option value="OSMITA">OSMITA</option>
+      <option value="OSPA (Personal Aeronautico)">OSPA (Personal Aeronautico)</option>
+      <option value="OSPECOM">OSPECOM</option>
+      <option value="OSPEGAP (Petroleros)">OSPEGAP (Petroleros)</option>
+      <option value="OSPERSAAMS">OSPERSAAMS</option>
+      <option value="OSPERYHRA">OSPERYHRA</option>
+      <option value="OSPES (Estaciones de Servicio)">OSPES (Estaciones de Servicio)</option>
+      <option value="OSPIA AZUCARERA">OSPIA AZUCARERA</option>
+      <option value="OSPIL (Lecheros)">OSPIL (Lecheros)</option>
+      <option value="OSPIP">OSPIP</option>
+      <option value="OSPLAD">OSPLAD</option>
+      <option value="OSPRERA">OSPRERA</option>
+      <option value="OSPTA (Tecnico Aeronautico)">OSPTA (Tecnico Aeronautico)</option>
+      <option value="OSSEG (SEGUROS)">OSSEG (SEGUROS)</option>
+      <option value="OSSEIF (Ing. La Fronterita)">OSSEIF (Ing. La Fronterita)</option>
+      <option value="OSSEIÑ (Ing. Ñuñorco)">OSSEIÑ (Ing. Ñuñorco)</option>
+      <option value="PAMI">PAMI</option>
+      <option value="PARA REINTEGRO">PARA REINTEGRO</option>
+      <option value="PARQUE SALUD">PARQUE SALUD</option>
+      <option value="PARTICULAR">PARTICULAR</option>
+      <option value="PATRONES DE CABOTAJE">PATRONES DE CABOTAJE</option>
+      <option value="PODER JUDICIAL">PODER JUDICIAL</option>
+      <option value="POLICIA FEDERAL">POLICIA FEDERAL</option>
+      <option value="PRENSA">PRENSA</option>
+      <option value="PREVENCION SALUD">PREVENCION SALUD</option>
+      <option value="RED DE SEGUROS MEDICOS">RED DE SEGUROS MEDICOS</option>
+      <option value="SADAIC">SADAIC</option>
+      <option value="SANATORIO ROCA">SANATORIO ROCA</option>
+      <option value="SANATORIO SARMIENTO">SANATORIO SARMIENTO</option>
+      <option value="SANCOR SALUD">SANCOR SALUD</option>
+      <option value="SEGURO ESOLAR DE LA PROV.">SEGURO ESOLAR DE LA PROV.</option>
+      <option value="SERRA">SERRA</option>
+      <option value="SERVESALUD">SERVESALUD</option>
+      <option value="SIN CARGO">SIN CARGO</option>
+      <option value="SIN COPAGO PEDIATRIA">SIN COPAGO PEDIATRIA</option>
+      <option value="SOREMER">SOREMER</option>
+      <option value="SUBOFICIALES RETIRADOS">SUBOFICIALES RETIRADOS</option>
+      <option value="SUBSIDIO DE SALUD">SUBSIDIO DE SALUD</option>
+      <option value="SWISS MEDICAL">SWISS MEDICAL</option>
+      <option value="TV SALUD">TV SALUD</option>
+      <option value="UNION PERSONAL">UNION PERSONAL</option>
+      <option value="UOM (OSUOMRA-Forjar Salud)">UOM (OSUOMRA-Forjar Salud)</option>
+      <option value="UP Union Personal">UP Union Personal</option>
+      <option value="UTA">UTA</option>
     </select>
-    <button class="btn-buscar">Buscar</button>
+    <button class="btn-buscar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;margin-right:6px;">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      Buscar
+    </button>
   </section>
 
   <main class="main-content">
@@ -47,17 +165,20 @@
 
       <!-- TARJETA 1: INFORMACIÓN GENERAL -->
       <div class="card">
-        <h2><span class="icon-title">👤</span> Información General</h2>
+        <h2>
+          <span class="icon-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </span> 
+          Información General
+        </h2>
         <div class="form-grid">
-      <div class="form-group full-width">
-  <label>Seleccionar Médico</label>
-  
-  <input type="text" id="medicoSearch" class="select-primary" placeholder="🔍 Filtrar médicos..." autocomplete="off" style="margin-bottom: 12px;">
-  
-  <select id="medicoSelect" class="select-primary">
-    <option value="">-- Seleccione un médico --</option>
-  </select>
-</div>
+          <div class="form-group full-width">
+            <label>Seleccionar Médico</label>
+            <input type="text" id="medicoSearch" class="select-primary" placeholder="Filtrar médicos..." autocomplete="off" style="margin-bottom: 12px;">
+            <select id="medicoSelect" class="select-primary">
+              <option value="">-- Seleccione un médico --</option>
+            </select>
+          </div>
           <div class="form-group">
             <label>Matrícula</label>
             <input id="matricula" type="text" placeholder="Ej: 1001">
@@ -83,7 +204,12 @@
 
       <!-- TARJETA 2: ESPECIALIDADES -->
       <div class="card">
-        <h2><span class="icon-title">🩺</span> Especialidades</h2>
+        <h2>
+          <span class="icon-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </span> 
+          Especialidades
+        </h2>
         <div class="especialidades-grid">
           <label><input class="especialidad" type="checkbox" value="Médico"> Médico</label>
           <label><input class="especialidad" type="checkbox" value="Urología"> Urología</label>
@@ -122,7 +248,12 @@
 
       <!-- TARJETA 3: DÍAS DE ATENCIÓN -->
       <div class="card">
-        <h2><span class="icon-title">📅</span> Días de Atención</h2>
+        <h2>
+          <span class="icon-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </span> 
+          Días de Atención
+        </h2>
         <p class="hint-text">Selecciona los días para habilitar sus horarios automáticamente.</p>
         <div class="dias-grid">
           <label><input class="dia" type="checkbox" value="Lunes"> Lunes</label>
@@ -137,14 +268,22 @@
 
       <!-- TARJETA 4: HORARIOS (MAÑANA Y TARDE) -->
       <div class="card" id="card-horarios">
-        <h2><span class="icon-title">🕒</span> Horarios</h2>
+        <h2>
+          <span class="icon-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span> 
+          Horarios
+        </h2>
         <div class="horarios-grid">
           
           <!-- LUNES -->
           <div class="form-group horario-row" data-dia="lunes">
             <label class="dia-label">Lunes</label>
             <div class="time-block">
-              <span class="time-block-title">☀️ Mañana</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                Mañana
+              </span>
               <div class="time-inputs">
                 <input id="lunMananaEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -152,7 +291,10 @@
               </div>
             </div>
             <div class="time-block">
-              <span class="time-block-title">🌙 Tarde</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                Tarde
+              </span>
               <div class="time-inputs">
                 <input id="lunTardeEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -165,7 +307,10 @@
           <div class="form-group horario-row" data-dia="martes">
             <label class="dia-label">Martes</label>
             <div class="time-block">
-              <span class="time-block-title">☀️ Mañana</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                Mañana
+              </span>
               <div class="time-inputs">
                 <input id="marMananaEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -173,7 +318,10 @@
               </div>
             </div>
             <div class="time-block">
-              <span class="time-block-title">🌙 Tarde</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                Tarde
+              </span>
               <div class="time-inputs">
                 <input id="marTardeEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -186,7 +334,10 @@
           <div class="form-group horario-row" data-dia="miercoles">
             <label class="dia-label">Miércoles</label>
             <div class="time-block">
-              <span class="time-block-title">☀️ Mañana</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                Mañana
+              </span>
               <div class="time-inputs">
                 <input id="mieMananaEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -194,7 +345,10 @@
               </div>
             </div>
             <div class="time-block">
-              <span class="time-block-title">🌙 Tarde</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                Tarde
+              </span>
               <div class="time-inputs">
                 <input id="mieTardeEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -207,7 +361,10 @@
           <div class="form-group horario-row" data-dia="jueves">
             <label class="dia-label">Jueves</label>
             <div class="time-block">
-              <span class="time-block-title">☀️ Mañana</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                Mañana
+              </span>
               <div class="time-inputs">
                 <input id="jueMananaEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -215,7 +372,10 @@
               </div>
             </div>
             <div class="time-block">
-              <span class="time-block-title">🌙 Tarde</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                Tarde
+              </span>
               <div class="time-inputs">
                 <input id="jueTardeEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -228,7 +388,10 @@
           <div class="form-group horario-row" data-dia="viernes">
             <label class="dia-label">Viernes</label>
             <div class="time-block">
-              <span class="time-block-title">☀️ Mañana</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                Mañana
+              </span>
               <div class="time-inputs">
                 <input id="vieMananaEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -236,7 +399,10 @@
               </div>
             </div>
             <div class="time-block">
-              <span class="time-block-title">🌙 Tarde</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                Tarde
+              </span>
               <div class="time-inputs">
                 <input id="vieTardeEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -249,7 +415,10 @@
           <div class="form-group horario-row" data-dia="sabado">
             <label class="dia-label">Sábado</label>
             <div class="time-block">
-              <span class="time-block-title">☀️ Mañana</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                Mañana
+              </span>
               <div class="time-inputs">
                 <input id="sabMananaEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -257,7 +426,10 @@
               </div>
             </div>
             <div class="time-block">
-              <span class="time-block-title">🌙 Tarde</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                Tarde
+              </span>
               <div class="time-inputs">
                 <input id="sabTardeEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -270,7 +442,10 @@
           <div class="form-group horario-row" data-dia="domingo">
             <label class="dia-label">Domingo</label>
             <div class="time-block">
-              <span class="time-block-title">☀️ Mañana</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                Mañana
+              </span>
               <div class="time-inputs">
                 <input id="domMananaEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -278,7 +453,10 @@
               </div>
             </div>
             <div class="time-block">
-              <span class="time-block-title">🌙 Tarde</span>
+              <span class="time-block-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                Tarde
+              </span>
               <div class="time-inputs">
                 <input id="domTardeEntrada" type="time">
                 <span class="time-separator">a</span>
@@ -291,57 +469,77 @@
       </div>
 
      <!-- TARJETA 5: CONFIGURACIÓN DE AGENDA -->
-<div class="card">
-  <h2><span class="icon-title">⚙️</span> Configuración de Agenda</h2>
-  <div class="form-grid">
-    <div class="form-group">
-      <label>Ver Vacíos</label>
-      <select id="verVacios" class="select-primary">
-        <option>Con agenda completa</option>
-        <option>Mostrar huecos</option>
-        <option>Ocultar huecos</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Visible en Pantallas</label>
-      <select id="visiblePantallas" class="select-primary">
-        <option>SI</option>
-        <option>NO</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Turnos Por Internet</label>
-      <select id="turnosInternet" class="select-primary">
-        <option>Visible, pero no puede por Internet</option>
-        <option>Visible y puede por Internet</option>
-        <option>No visible</option>
-      </select>
-    </div>
+      <div class="card">
+        <h2>
+          <span class="icon-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </span> 
+          Configuración de Agenda
+        </h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Ver Vacíos</label>
+            <select id="verVacios" class="select-primary">
+              <option>Con agenda completa</option>
+              <option>Mostrar huecos</option>
+              <option>Ocultar huecos</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Visible en Pantallas</label>
+            <select id="visiblePantallas" class="select-primary">
+              <option>SI</option>
+              <option>NO</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Turnos Por Internet</label>
+            <select id="turnosInternet" class="select-primary">
+              <option>Visible, pero no puede por Internet</option>
+              <option>Visible y puede por Internet</option>
+              <option>No visible</option>
+            </select>
+          </div>
 
-    <div class="form-group full-width">
-      <label>💬 Mensaje de WhatsApp</label>
-      <textarea id="mensajeWhatsApp" class="textarea-simple" rows="3" placeholder="Ej: Hola, le recordamos su turno en el Centro Medico Palacio"></textarea>
-    </div>
+          <div class="form-group full-width">
+            <label>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              Mensaje de WhatsApp
+            </label>
+            <textarea id="mensajeWhatsApp" class="textarea-simple" rows="3" placeholder="Ej: Hola, le recordamos su turno en el Centro Medico Palacio"></textarea>
+          </div>
 
-    <div class="form-group full-width">
-      <label>📝 Detalle</label>
-      <div id="editorDetalle" style="height: 150px; background: var(--bg-input);"></div>
-    </div>
+          <div class="form-group full-width">
+            <label>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              Detalle
+            </label>
+            <div id="editorDetalle" style="height: 150px; background: var(--bg-input);"></div>
+          </div>
 
-    <div class="form-group full-width">
-      <label>🌐 Mensaje Internet</label>
-      <div id="editorMensajeInternet" style="height: 150px; background: var(--bg-input);"></div>
-    </div>
+          <div class="form-group full-width">
+            <label>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Mensaje Internet
+            </label>
+            <div id="editorMensajeInternet" style="height: 150px; background: var(--bg-input);"></div>
+          </div>
 
-  </div>
-</div>
+        </div>
+      </div>
 
     </div>
 
     <div class="actions">
-      <button id="nuevoMedico" class="btn-nuevo">+ Nuevo Médico</button>
+      <button id="nuevoMedico" class="btn-nuevo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;margin-right:6px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Nuevo Médico
+      </button>
       <button class="btn-cancelar">Cancelar</button>
-      <button class="btn-guardar">💾 Guardar Cambios</button>
+      <button class="btn-guardar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;margin-right:6px;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+        Guardar Cambios
+      </button>
     </div>
 
   </main>

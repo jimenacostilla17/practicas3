@@ -824,3 +824,74 @@ body {
     border-radius: 8px !important;
   }
 }
+
+/* =========================================
+   ESTILOS PARA BLOQUES DE MAÑANA Y TARDE
+   ========================================= */
+.time-block {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s ease;
+}
+
+.time-block:last-child {
+  margin-bottom: 0;
+}
+
+.horario-row.activo .time-block {
+  background: rgba(59, 130, 246, 0.05);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.time-block-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.horario-row.activo .time-block-title {
+  color: var(--color-primary);
+}
+
+.time-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.time-inputs input[type="time"] {
+  flex: 1;
+  padding: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.time-inputs input[type="time"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.time-separator {
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 13px;
+}

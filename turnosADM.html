@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turnos - Centro Médico Palacio</title>
+  <link rel="stylesheet" href="turnosADM.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER: Navegación principal -->
+  <header class="header">
+    <div class="header-left">
+      <p class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L12 22M17 7H9.5C8.57174 7 7.6815 7.36875 7.02513 8.02513C6.36875 8.6815 6 9.57174 6 10.5C6 11.4283 6.36875 12.3185 7.02513 12.9749C7.6815 13.6313 8.57174 14 9.5 14H14.5C15.4283 14 16.3185 14.3687 16.9749 15.0251C17.6313 15.6815 18 16.5717 18 17.5C18 18.4283 17.6313 19.3185 16.9749 19.9749C16.3185 20.6313 15.4283 21 14.5 21H6"/>
+        </svg>
+      </p>
+    </div>
+    <nav class="nav-menu">
+      <a href="#" class="active">Turnos</a>
+      <a href="pacientes.html">Pacientes</a>
+      <a href="#">Consultorio</a>
+      <a href="#">Recetas</a>
+      <a href="index.html">Administración</a>
+      <a href="sistemas.html">Sistemas</a>
+      <a href="#">Salir</a>
+    </nav>
+    <div class="header-right">
+      <!-- 
+        ============================================================
+        TODO: NOMBRE DE USUARIO DINÁMICO
+        ============================================================
+        Aquí debe ir el nombre del usuario que inició sesión.
+        Ejemplo: Si el usuario es "Juan Pérez", debe mostrarse:
+        <span class="user-name">PÉREZ JUAN</span>
+        
+        Esto se debe obtener desde la sesión del sistema (backend).
+        Formato sugerido: APELLIDO NOMBRE (en mayúsculas)
+        ============================================================
+      -->
+      <span class="user-name" id="userNameDisplay">PALACIO GASTON ANTONIO</span>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+        <span class="icon">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- BARRA DE BÚSQUEDA -->
+  <section class="search-bar">
+    <input type="text" placeholder="Nombre del Paciente" class="input-paciente">
+<select class="select-obra">
+  <option value="">Obras Sociales</option>
+  <option value="Particular">Particular</option>
+  <option value="ACA SALUD">ACA SALUD</option>
+  <option value="AMFFA">AMFFA</option>
+  <option value="AMSTERDAN SALUD">AMSTERDAN SALUD</option>
+  <option value="APLA">APLA</option>
+  <option value="APM">APM</option>
+  <option value="ASISPRE">ASISPRE</option>
+  <option value="ASISTIR">ASISTIR</option>
+  <option value="ASISTIR-OSPACA">ASISTIR-OSPACA</option>
+  <option value="ASOC. ECLESIASTICA SAN PEDRO">ASOC. ECLESIASTICA SAN PEDRO</option>
+  <option value="ASUNT">ASUNT</option>
+  <option value="ASUNT (Consulta Especial)">ASUNT (Consulta Especial)</option>
+  <option value="BOREAL">BOREAL</option>
+  <option value="BOREAL.NET">BOREAL.NET</option>
+  <option value="BRAMED SRL">BRAMED SRL</option>
+  <option value="CANILLITAS FLORENCIO SANCHEZ">CANILLITAS FLORENCIO SANCHEZ</option>
+  <option value="CLINICA MAYO">CLINICA MAYO</option>
+  <option value="COLMED OSMEDICA">COLMED OSMEDICA</option>
+  <option value="COLMED TODOS MENOS OSMEDICA">COLMED TODOS MENOS OSMEDICA</option>
+  <option value="COOP. TRABAJADORES AGRICOLAS">COOP. TRABAJADORES AGRICOLAS</option>
+  <option value="COOP. TRABAJADORES EVENTUR">COOP. TRABAJADORES EVENTUR</option>
+  <option value="COOP. TRABAJADORES HUMANA">COOP. TRABAJADORES HUMANA</option>
+  <option value="COOP. TRABAJADORES INSTALADORES">COOP. TRABAJADORES INSTALADORES</option>
+  <option value="CRISTAL SALUD - APPI SRL">CRISTAL SALUD - APPI SRL</option>
+  <option value="DASUTEN">DASUTEN</option>
+  <option value="DIARIOS Y REVISTAS">DIARIOS Y REVISTAS</option>
+  <option value="DIBA">DIBA</option>
+  <option value="FARMACIA (GAPRESA)">FARMACIA (GAPRESA)</option>
+  <option value="FOTIA - OSPAAТ">FOTIA - OSPAAТ</option>
+  <option value="FUERZA AEREA">FUERZA AEREA</option>
+  <option value="GALENO">GALENO</option>
+  <option value="GALENO CONSULTIN GROUP">GALENO CONSULTIN GROUP</option>
+  <option value="GALVEZ">GALVEZ</option>
+  <option value="INTERSALUD">INTERSALUD</option>
+  <option value="IOSE">IOSE</option>
+  <option value="JERARQUICOS SALUD">JERARQUICOS SALUD</option>
+  <option value="LUIS PASTEUR">LUIS PASTEUR</option>
+  <option value="MAPFRE">MAPFRE</option>
+  <option value="MEDICUS">MEDICUS</option>
+  <option value="MEDIFE">MEDIFE</option>
+  <option value="MITA">MITA</option>
+  <option value="MORA">MORA</option>
+  <option value="MUTUAL 10 DE ABRIL">MUTUAL 10 DE ABRIL</option>
+  <option value="MUTUAL PERSONAL AGUA Y ENERGIA">MUTUAL PERSONAL AGUA Y ENERGIA</option>
+  <option value="NOR MEDICA">NOR MEDICA</option>
+  <option value="NORTE SALUD">NORTE SALUD</option>
+  <option value="OMINT">OMINT</option>
+  <option value="OPDEA">OPDEA</option>
+  <option value="ORDEN PRESTADA">ORDEN PRESTADA</option>
+  <option value="OSACRA">OSACRA</option>
+  <option value="OSAPM">OSAPM</option>
+  <option value="OSDDIP">OSDDIP</option>
+  <option value="OSDE">OSDE</option>
+  <option value="OSDOP">OSDOP</option>
+  <option value="OSETYA">OSETYA</option>
+  <option value="OSFATUN">OSFATUN</option>
+  <option value="OSJERA (Jerarquicos Rep. Argentina)">OSJERA (Jerarquicos Rep. Argentina)</option>
+  <option value="OSMATA">OSMATA</option>
+  <option value="OSMITA">OSMITA</option>
+  <option value="OSPA (Personal Aeronautico)">OSPA (Personal Aeronautico)</option>
+  <option value="OSPECOM">OSPECOM</option>
+  <option value="OSPEGAP (Petroleros)">OSPEGAP (Petroleros)</option>
+  <option value="OSPERSAAMS">OSPERSAAMS</option>
+  <option value="OSPERYHRA">OSPERYHRA</option>
+  <option value="OSPES (Estaciones de Servicio)">OSPES (Estaciones de Servicio)</option>
+  <option value="OSPIA AZUCARERA">OSPIA AZUCARERA</option>
+  <option value="OSPIL (Lecheros)">OSPIL (Lecheros)</option>
+  <option value="OSPIP">OSPIP</option>
+  <option value="OSPLAD">OSPLAD</option>
+  <option value="OSPRERA">OSPRERA</option>
+  <option value="OSPTA (Tecnico Aeronautico)">OSPTA (Tecnico Aeronautico)</option>
+  <option value="OSSEG (SEGUROS)">OSSEG (SEGUROS)</option>
+  <option value="OSSEIF (Ing. La Fronterita)">OSSEIF (Ing. La Fronterita)</option>
+  <option value="OSSEIÑ (Ing. Ñuñorco)">OSSEIÑ (Ing. Ñuñorco)</option>
+  <option value="PAMI">PAMI</option>
+  <option value="PARA REINTEGRO">PARA REINTEGRO</option>
+  <option value="PARQUE SALUD">PARQUE SALUD</option>
+  <option value="PARTICULAR">PARTICULAR</option>
+  <option value="PATRONES DE CABOTAJE">PATRONES DE CABOTAJE</option>
+  <option value="PODER JUDICIAL">PODER JUDICIAL</option>
+  <option value="POLICIA FEDERAL">POLICIA FEDERAL</option>
+  <option value="PRENSA">PRENSA</option>
+  <option value="PREVENCION SALUD">PREVENCION SALUD</option>
+  <option value="RED DE SEGUROS MEDICOS">RED DE SEGUROS MEDICOS</option>
+  <option value="SADAIC">SADAIC</option>
+  <option value="SANATORIO ROCA">SANATORIO ROCA</option>
+  <option value="SANATORIO SARMIENTO">SANATORIO SARMIENTO</option>
+  <option value="SANCOR SALUD">SANCOR SALUD</option>
+  <option value="SEGURO ESOLAR DE LA PROV.">SEGURO ESOLAR DE LA PROV.</option>
+  <option value="SERRA">SERRA</option>
+  <option value="SERVESALUD">SERVESALUD</option>
+  <option value="SIN CARGO">SIN CARGO</option>
+  <option value="SIN COPAGO PEDIATRIA">SIN COPAGO PEDIATRIA</option>
+  <option value="SOREMER">SOREMER</option>
+  <option value="SUBOFICIALES RETIRADOS">SUBOFICIALES RETIRADOS</option>
+  <option value="SUBSIDIO DE SALUD">SUBSIDIO DE SALUD</option>
+  <option value="SWISS MEDICAL">SWISS MEDICAL</option>
+  <option value="TV SALUD">TV SALUD</option>
+  <option value="UNION PERSONAL">UNION PERSONAL</option>
+  <option value="UOM (OSUOMRA-Forjar Salud)">UOM (OSUOMRA-Forjar Salud)</option>
+  <option value="UP Union Personal">UP Union Personal</option>
+  <option value="UTA">UTA</option>
+</select>
+    <button class="btn-buscar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;margin-right:6px;">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      Buscar
+    </button>
+  </section>
+
+  <main class="main-content">
+    
+    <!-- SECCIÓN SUPERIOR: CALENDARIO Y GESTIÓN -->
+    <div class="top-section">
+      
+      <!-- CALENDARIO -->
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button class="btn-nav" id="btnMesAnterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <h2 class="calendar-title" id="mesAnio">Octubre 2026</h2>
+          <button class="btn-nav" id="btnMesSiguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="calendar-grid" id="calendarGrid">
+          <!-- Días de la semana -->
+          <div class="day-header">Lu</div>
+          <div class="day-header">Ma</div>
+          <div class="day-header">Mi</div>
+          <div class="day-header">Ju</div>
+          <div class="day-header">Vi</div>
+          <div class="day-header">Sa</div>
+          <div class="day-header">Do</div>
+          
+          <!-- Días del mes (se generan dinámicamente) -->
+          <!-- 
+            ============================================================
+            TODO: GENERACIÓN DINÁMICA DEL CALENDARIO
+            ============================================================
+            Aquí debe ir la lógica para generar los días del mes seleccionado.
+            Cada día debe ser un div con clase "day" o "day selected" si es el día actual.
+            Ejemplo:
+            <div class="day">1</div>
+            <div class="day selected">12</div>
+            ============================================================
+          -->
+        </div>
+      </div>
+
+      <!-- GESTIÓN ADMINISTRATIVA -->
+      <div class="admin-actions">
+        <h3 class="admin-title">Gestión Administrativa:</h3>
+        <div class="action-buttons">
+          <button class="btn-action" id="btnNuevoTurno">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Nuevo Turno
+          </button>
+          <button class="btn-action" id="btnCajaHoy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;">
+              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+            Caja de Hoy
+          </button>
+          <button class="btn-action" id="btnImprimirTurno">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;">
+              <polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>
+            </svg>
+            Imprimir turno
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN DE MÉDICOS -->
+    <div class="medicos-section">
+      <div class="medicos-header">
+        <h3 class="medicos-title">Médicos</h3>
+      </div>
+      <div class="medicos-list" id="medicosList">
+        <!-- 
+          ============================================================
+          TODO: LISTA DE MÉDICOS
+          ============================================================
+          Aquí debe ir la lógica para cargar los médicos disponibles.
+          Cada médico debe ser un elemento clicable que filtre la tabla.
+          Ejemplo:
+          <div class="medico-item" data-medico-id="1">
+            <span>Dr. García</span>
+          </div>
+          ============================================================
+        -->
+        <div class="medicos-placeholder">Seleccione un médico para ver sus turnos</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- TABLA DE TURNOS DEL DÍA -->
+  <div class="table-section">
+    <!-- 
+      ============================================================
+      TODO: FECHA ACTUAL DINÁMICA
+      ============================================================
+      Aquí debe mostrarse la fecha seleccionada en el calendario
+      y el nombre del usuario actual.
+      Ejemplo: PALACIO GASTON ANTONIO - 12/10/2026
+      ============================================================
+    -->
+    <div class="table-footer" id="tableFooter">
+      PALACIO GASTON ANTONIO - 12/10/2026
+    </div>
+
+    <div class="table-container">
+      <table class="turnos-table">
+        <thead>
+          <tr>
+            <th style="width: 60px;">Nro.</th>
+            <th style="width: 80px;">Hora</th>
+            <th style="width: 80px;">Demora</th>
+            <th>Médicos</th>
+            <th>Paciente</th>
+            <th style="width: 120px;">Celular</th>
+            <th>Obra Soc</th>
+            <th>Proceso</th>
+            <th style="width: 120px;">Estado</th>
+            <th style="width: 120px;">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaTurnos">
+          <!-- 
+            ============================================================
+            TODO: CARGA DE TURNOS
+            ============================================================
+            Aquí debe ir la lógica para cargar los turnos del día seleccionado.
+            Cada fila debe tener la siguiente estructura:
+            
+            <tr data-turno-id="ID_TURNO">
+              <td>NRO_TURNO</td>
+              <td>HORA</td>
+              <td>DEMORA (ej: "15 min")</td>
+              <td>NOMBRE_MÉDICO</td>
+              <td>NOMBRE_PACIENTE</td>
+              <td>CELULAR</td>
+              <td>OBRA_SOCIAL</td>
+              <td>PROCESO</td>
+              <td><span class="estado-badge estado-XXX">ESTADO</span></td>
+              <td>
+                <button class="btn-icon btn-edit" title="Editar">...</button>
+                <button class="btn-icon btn-delete" title="Cancelar">...</button>
+              </td>
+            </tr>
+            
+            Si no hay turnos, mostrar el estado vacío con id="estadoVacioTurnos"
+            ============================================================
+          -->
+        </tbody>
+      </table>
+
+      <!-- ESTADO VACÍO DE TURNOS -->
+      <div class="empty-state" id="estadoVacioTurnos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:64px;height:64px;opacity:0.4;">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <h3>No hay turnos para este día</h3>
+        <p>Los turnos programados aparecerán aquí.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ==========================================
+    // TEMA OSCURO / CLARO
+    // ==========================================
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const iconSun = document.querySelector('.icon-sun');
+    const iconMoon = document.querySelector('.icon-moon');
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      if (theme === 'dark') {
+        iconSun.style.display = 'none';
+        iconMoon.style.display = 'block';
+      } else {
+        iconSun.style.display = 'block';
+        iconMoon.style.display = 'none';
+      }
+    }
+
+    // ==========================================
+    // TODO: CARGA DEL NOMBRE DE USUARIO
+    // ==========================================
+    // Aquí debe ir la lógica para cargar el nombre del usuario desde la sesión
+    // Ejemplo:
+    // fetch('/api/usuario/actual')
+    //   .then(response => response.json())
+    //   .then(usuario => {
+    //     document.getElementById('userNameDisplay').textContent = usuario.nombreCompleto;
+    //     document.getElementById('tableFooter').textContent = `${usuario.nombreCompleto} - ${fechaActual}`;
+    //   });
+
+    // ==========================================
+    // TODO: LÓGICA DE CALENDARIO Y TURNOS
+    // ==========================================
+    // Aquí debe ir la lógica para:
+    // 1. Generar el calendario del mes actual
+    // 2. Navegar entre meses (anterior/siguiente)
+    // 3. Seleccionar un día del calendario
+    // 4. Cargar los turnos del día seleccionado
+    // 5. Filtrar por médico
+    // 6. Actualizar la fecha en el footer de la tabla
+
+    document.getElementById('btnNuevoTurno').addEventListener('click', () => {
+      console.log('Crear nuevo turno');
+      // TODO: Abrir modal de nuevo turno
+    });
+
+    document.getElementById('btnCajaHoy').addEventListener('click', () => {
+      console.log('Ver caja de hoy');
+      // TODO: Mostrar resumen de caja del día
+    });
+
+    document.getElementById('btnImprimirTurno').addEventListener('click', () => {
+      console.log('Imprimir turno');
+      // TODO: Imprimir turno seleccionado o lista del día
+    });
+
+        // ==========================================
+    // TODO: LÓGICA DEL CALENDARIO
+    // ==========================================
+    // El siguiente código genera un calendario dinámico que permite:
+    // 1. Mostrar el mes y año actual
+    // 2. Navegar entre meses (anterior/siguiente)
+    // 3. Seleccionar un día específico
+    // 4. Resaltar el día seleccionado
+    // 
+    // IMPORTANTE: Este código es funcional pero debe ser adaptado
+    // para conectarse con el backend y cargar los turnos del día seleccionado.
+    // ==========================================
+
+    // Variables globales del calendario
+    let fechaActual = new Date();
+    let mesActual = fechaActual.getMonth();
+    let anioActual = fechaActual.getFullYear();
+    let diaSeleccionado = null;
+
+    // Nombres de los meses en español
+    const nombresMeses = [
+      'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+      'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+    ];
+
+    /**
+     * Función: generarCalendario
+     * Descripción: Genera el calendario del mes y año actuales
+     * y lo renderiza en el grid del calendario.
+     * 
+     * Proceso:
+     * 1. Obtiene el primer día del mes (0 = Domingo, 1 = Lunes, etc.)
+     * 2. Obtiene la cantidad de días del mes
+     * 3. Genera los días del mes anterior que completan la primera semana
+     * 4. Genera todos los días del mes actual
+     * 5. Genera los días del mes siguiente que completan la última semana
+     * 6. Marca el día seleccionado (si hay uno)
+     */
+    function generarCalendario() {
+      const calendarGrid = document.getElementById('calendarGrid');
+      const mesAnioElement = document.getElementById('mesAnio');
+      
+      // Actualizar título del calendario (ej: "Octubre 2026")
+      mesAnioElement.textContent = `${nombresMeses[mesActual]} ${anioActual}`;
+      
+      // Limpiar el grid (manteniendo solo los headers de días)
+      const headers = calendarGrid.querySelectorAll('.day-header');
+      calendarGrid.innerHTML = '';
+      headers.forEach(header => calendarGrid.appendChild(header));
+      
+      // Calcular el primer día del mes (ajustado para que Lunes = 0)
+      const primerDiaMes = new Date(anioActual, mesActual, 1).getDay();
+      const diasEnMes = new Date(anioActual, mesActual + 1, 0).getDate();
+      
+      // Ajustar para que la semana empiece en Lunes (no en Domingo)
+      const inicioSemana = primerDiaMes === 0 ? 6 : primerDiaMes - 1;
+      
+      // Agregar días del mes anterior (espacios vacíos)
+      for (let i = 0; i < inicioSemana; i++) {
+        const dayDiv = document.createElement('div');
+        dayDiv.className = 'day other-month';
+        calendarGrid.appendChild(dayDiv);
+      }
+      
+      // Agregar días del mes actual
+      const hoy = new Date();
+      for (let dia = 1; dia <= diasEnMes; dia++) {
+        const dayDiv = document.createElement('div');
+        dayDiv.className = 'day';
+        dayDiv.textContent = dia;
+        
+        // Verificar si es el día seleccionado
+        if (diaSeleccionado === dia) {
+          dayDiv.classList.add('selected');
+        }
+        
+        // Verificar si es hoy (opcional: agregar clase 'today')
+        if (dia === hoy.getDate() && 
+            mesActual === hoy.getMonth() && 
+            anioActual === hoy.getFullYear()) {
+          // dayDiv.classList.add('today'); // Descomentar si se quiere resaltar hoy
+        }
+        
+        // Agregar evento de click para seleccionar el día
+        dayDiv.addEventListener('click', () => {
+          // Remover selección previa
+          const dias = calendarGrid.querySelectorAll('.day');
+          dias.forEach(d => d.classList.remove('selected'));
+          
+          // Seleccionar nuevo día
+          dayDiv.classList.add('selected');
+          diaSeleccionado = dia;
+          
+          // TODO: Cargar turnos del día seleccionado
+          console.log(`Día seleccionado: ${dia}/${mesActual + 1}/${anioActual}`);
+          // Ejemplo: cargarTurnos(anioActual, mesActual, dia);
+        });
+        
+        calendarGrid.appendChild(dayDiv);
+      }
+    }
+
+    /**
+     * Función: mesAnterior
+     * Descripción: Navega al mes anterior y regenera el calendario
+     */
+    function mesAnterior() {
+      mesActual--;
+      if (mesActual < 0) {
+        mesActual = 11;
+        anioActual--;
+      }
+      generarCalendario();
+    }
+
+    /**
+     * Función: mesSiguiente
+     * Descripción: Navega al mes siguiente y regenera el calendario
+     */
+    function mesSiguiente() {
+      mesActual++;
+      if (mesActual > 11) {
+        mesActual = 0;
+        anioActual++;
+      }
+      generarCalendario();
+    }
+
+    /**
+     * Función: actualizarFooterTabla
+     * Descripción: Actualiza el footer de la tabla con el nombre del
+     * usuario y la fecha seleccionada
+     * 
+     * TODO: Esta función debe ser llamada cada vez que se selecciona
+     * un día o se carga el nombre del usuario desde el backend.
+     */
+    function actualizarFooterTabla() {
+      const footer = document.getElementById('tableFooter');
+      const userName = document.getElementById('userNameDisplay').textContent;
+      
+      if (diaSeleccionado) {
+        // Formatear fecha: DD/MM/AAAA
+        const fechaFormateada = `${diaSeleccionado}/${mesActual + 1}/${anioActual}`;
+        footer.textContent = `${userName} - ${fechaFormateada}`;
+      } else {
+        // Si no hay día seleccionado, mostrar fecha actual
+        const hoy = new Date();
+        const fechaFormateada = `${hoy.getDate()}/${hoy.getMonth() + 1}/${hoy.getFullYear()}`;
+        footer.textContent = `${userName} - ${fechaFormateada}`;
+      }
+    }
+
+    /**
+     * TODO: Función para cargar turnos desde el backend
+     * Esta función debe ser implementada para:
+     * 1. Hacer una petición AJAX/Fetch al backend
+     * 2. Pasar como parámetros: año, mes, día, y opcionalmente médico
+     * 3. Recibir la lista de turnos en formato JSON
+     * 4. Renderizar los turnos en la tabla
+     * 
+     * Ejemplo de implementación:
+     */
+    /*
+    function cargarTurnos(anio, mes, dia, medicoId = null) {
+      // Construir URL del endpoint
+      let url = `/api/turnos?anio=${anio}&mes=${mes + 1}&dia=${dia}`;
+      if (medicoId) {
+        url += `&medico=${medicoId}`;
+      }
+      
+      // Hacer la petición al backend
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          // Limpiar tabla actual
+          const tbody = document.getElementById('tablaTurnos');
+          tbody.innerHTML = '';
+          
+          // Ocultar estado vacío
+          document.getElementById('estadoVacioTurnos').style.display = 'none';
+          
+          // Verificar si hay turnos
+          if (data.turnos && data.turnos.length > 0) {
+            // Renderizar cada turno
+            data.turnos.forEach(turno => {
+              const tr = document.createElement('tr');
+              tr.setAttribute('data-turno-id', turno.id);
+              tr.innerHTML = `
+                <td>${turno.numero}</td>
+                <td>${turno.hora}</td>
+                <td>${turno.demora || '-'}</td>
+                <td>${turno.medico}</td>
+                <td>${turno.paciente}</td>
+                <td>${turno.celular}</td>
+                <td>${turno.obraSocial}</td>
+                <td>${turno.proceso}</td>
+                <td><span class="estado-badge estado-${turno.estado}">${turno.estado}</span></td>
+                <td>
+                  <button class="btn-icon btn-edit" title="Editar">✏️</button>
+                  <button class="btn-icon btn-delete" title="Cancelar">🗑️</button>
+                </td>
+              `;
+              tbody.appendChild(tr);
+            });
+          } else {
+            // Mostrar estado vacío
+            document.getElementById('estadoVacioTurnos').style.display = 'flex';
+          }
+        })
+        .catch(error => {
+          console.error('Error al cargar turnos:', error);
+        });
+    }
+    */
+
+    // ==========================================
+    // INICIALIZACIÓN DEL CALENDARIO
+    // ==========================================
+    // Configurar event listeners para navegación de meses
+    document.getElementById('btnMesAnterior').addEventListener('click', mesAnterior);
+    document.getElementById('btnMesSiguiente').addEventListener('click', mesSiguiente);
+    
+    // Generar calendario inicial (mes actual)
+    generarCalendario();
+    
+    // Seleccionar hoy por defecto
+    const hoy = new Date();
+    diaSeleccionado = hoy.getDate();
+    mesActual = hoy.getMonth();
+    anioActual = hoy.getFullYear();
+    generarCalendario();
+    
+    // Actualizar footer con la fecha
+    actualizarFooterTabla();
+
+    // ==========================================
+    // TODO: CONEXIÓN CON NOMBRE DE USUARIO
+    // ==========================================
+    /**
+     * Cuando el backend proporcione el nombre del usuario actual,
+     * debe actualizarse el elemento #userNameDisplay y luego
+     * llamarse a actualizarFooterTabla() para que se muestre
+     * correctamente en la tabla.
+     * 
+     * Ejemplo:
+     * fetch('/api/usuario/actual')
+     *   .then(response => response.json())
+     *   .then(usuario => {
+     *     document.getElementById('userNameDisplay').textContent = usuario.nombre;
+     *     actualizarFooterTabla();
+     *   });
+     */
+  </script>
+</body>
+</html>

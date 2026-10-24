@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informes de Turno - Centro Médico Palacio</title>
+  <link rel="stylesheet" href="informes-turno.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER: Navegación principal -->
+  <header class="header">
+    <div class="header-left">
+      <p class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L12 22M17 7H9.5C8.57174 7 7.6815 7.36875 7.02513 8.02513C6.36875 8.6815 6 9.57174 6 10.5C6 11.4283 6.36875 12.3185 7.02513 12.9749C7.6815 13.6313 8.57174 14 9.5 14H14.5C15.4283 14 16.3185 14.3687 16.9749 15.0251C17.6313 15.6815 18 16.5717 18 17.5C18 18.4283 17.6313 19.3185 16.9749 19.9749C16.3185 20.6313 15.4283 21 14.5 21H6"/>
+        </svg>
+      </p>
+    </div>
+    <nav class="nav-menu">
+      <a href="#">Turnos</a>
+      <a href="#">Pacientes</a>
+      <a href="#">Consultorio</a>
+      <a href="#">Recetas</a>
+      <a href="index.html">Administración</a>
+      <a href="sistemas.html" class="active">Sistemas</a>
+      <a href="#">Salir</a>
+    </nav>
+    <div class="header-right">
+      <span class="user-name">PALACIO GASTON ANTONIO</span>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+        <span class="icon">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- BARRA DE BÚSQUEDA -->
+  <section class="search-bar">
+    <input type="text" placeholder="Nombre del Paciente" class="input-paciente">
+    <select class="select-obra">
+  <option value="">Obras Sociales</option>
+  <option value="Particular">Particular</option>
+  <option value="ACA SALUD">ACA SALUD</option>
+  <option value="AMFFA">AMFFA</option>
+  <option value="AMSTERDAN SALUD">AMSTERDAN SALUD</option>
+  <option value="APLA">APLA</option>
+  <option value="APM">APM</option>
+  <option value="ASISPRE">ASISPRE</option>
+  <option value="ASISTIR">ASISTIR</option>
+  <option value="ASISTIR-OSPACA">ASISTIR-OSPACA</option>
+  <option value="ASOC. ECLESIASTICA SAN PEDRO">ASOC. ECLESIASTICA SAN PEDRO</option>
+  <option value="ASUNT">ASUNT</option>
+  <option value="ASUNT (Consulta Especial)">ASUNT (Consulta Especial)</option>
+  <option value="BOREAL">BOREAL</option>
+  <option value="BOREAL.NET">BOREAL.NET</option>
+  <option value="BRAMED SRL">BRAMED SRL</option>
+  <option value="CANILLITAS FLORENCIO SANCHEZ">CANILLITAS FLORENCIO SANCHEZ</option>
+  <option value="CLINICA MAYO">CLINICA MAYO</option>
+  <option value="COLMED OSMEDICA">COLMED OSMEDICA</option>
+  <option value="COLMED TODOS MENOS OSMEDICA">COLMED TODOS MENOS OSMEDICA</option>
+  <option value="COOP. TRABAJADORES AGRICOLAS">COOP. TRABAJADORES AGRICOLAS</option>
+  <option value="COOP. TRABAJADORES EVENTUR">COOP. TRABAJADORES EVENTUR</option>
+  <option value="COOP. TRABAJADORES HUMANA">COOP. TRABAJADORES HUMANA</option>
+  <option value="COOP. TRABAJADORES INSTALADORES">COOP. TRABAJADORES INSTALADORES</option>
+  <option value="CRISTAL SALUD - APPI SRL">CRISTAL SALUD - APPI SRL</option>
+  <option value="DASUTEN">DASUTEN</option>
+  <option value="DIARIOS Y REVISTAS">DIARIOS Y REVISTAS</option>
+  <option value="DIBA">DIBA</option>
+  <option value="FARMACIA (GAPRESA)">FARMACIA (GAPRESA)</option>
+  <option value="FOTIA - OSPAAТ">FOTIA - OSPAAТ</option>
+  <option value="FUERZA AEREA">FUERZA AEREA</option>
+  <option value="GALENO">GALENO</option>
+  <option value="GALENO CONSULTIN GROUP">GALENO CONSULTIN GROUP</option>
+  <option value="GALVEZ">GALVEZ</option>
+  <option value="INTERSALUD">INTERSALUD</option>
+  <option value="IOSE">IOSE</option>
+  <option value="JERARQUICOS SALUD">JERARQUICOS SALUD</option>
+  <option value="LUIS PASTEUR">LUIS PASTEUR</option>
+  <option value="MAPFRE">MAPFRE</option>
+  <option value="MEDICUS">MEDICUS</option>
+  <option value="MEDIFE">MEDIFE</option>
+  <option value="MITA">MITA</option>
+  <option value="MORA">MORA</option>
+  <option value="MUTUAL 10 DE ABRIL">MUTUAL 10 DE ABRIL</option>
+  <option value="MUTUAL PERSONAL AGUA Y ENERGIA">MUTUAL PERSONAL AGUA Y ENERGIA</option>
+  <option value="NOR MEDICA">NOR MEDICA</option>
+  <option value="NORTE SALUD">NORTE SALUD</option>
+  <option value="OMINT">OMINT</option>
+  <option value="OPDEA">OPDEA</option>
+  <option value="ORDEN PRESTADA">ORDEN PRESTADA</option>
+  <option value="OSACRA">OSACRA</option>
+  <option value="OSAPM">OSAPM</option>
+  <option value="OSDDIP">OSDDIP</option>
+  <option value="OSDE">OSDE</option>
+  <option value="OSDOP">OSDOP</option>
+  <option value="OSETYA">OSETYA</option>
+  <option value="OSFATUN">OSFATUN</option>
+  <option value="OSJERA (Jerarquicos Rep. Argentina)">OSJERA (Jerarquicos Rep. Argentina)</option>
+  <option value="OSMATA">OSMATA</option>
+  <option value="OSMITA">OSMITA</option>
+  <option value="OSPA (Personal Aeronautico)">OSPA (Personal Aeronautico)</option>
+  <option value="OSPECOM">OSPECOM</option>
+  <option value="OSPEGAP (Petroleros)">OSPEGAP (Petroleros)</option>
+  <option value="OSPERSAAMS">OSPERSAAMS</option>
+  <option value="OSPERYHRA">OSPERYHRA</option>
+  <option value="OSPES (Estaciones de Servicio)">OSPES (Estaciones de Servicio)</option>
+  <option value="OSPIA AZUCARERA">OSPIA AZUCARERA</option>
+  <option value="OSPIL (Lecheros)">OSPIL (Lecheros)</option>
+  <option value="OSPIP">OSPIP</option>
+  <option value="OSPLAD">OSPLAD</option>
+  <option value="OSPRERA">OSPRERA</option>
+  <option value="OSPTA (Tecnico Aeronautico)">OSPTA (Tecnico Aeronautico)</option>
+  <option value="OSSEG (SEGUROS)">OSSEG (SEGUROS)</option>
+  <option value="OSSEIF (Ing. La Fronterita)">OSSEIF (Ing. La Fronterita)</option>
+  <option value="OSSEIÑ (Ing. Ñuñorco)">OSSEIÑ (Ing. Ñuñorco)</option>
+  <option value="PAMI">PAMI</option>
+  <option value="PARA REINTEGRO">PARA REINTEGRO</option>
+  <option value="PARQUE SALUD">PARQUE SALUD</option>
+  <option value="PARTICULAR">PARTICULAR</option>
+  <option value="PATRONES DE CABOTAJE">PATRONES DE CABOTAJE</option>
+  <option value="PODER JUDICIAL">PODER JUDICIAL</option>
+  <option value="POLICIA FEDERAL">POLICIA FEDERAL</option>
+  <option value="PRENSA">PRENSA</option>
+  <option value="PREVENCION SALUD">PREVENCION SALUD</option>
+  <option value="RED DE SEGUROS MEDICOS">RED DE SEGUROS MEDICOS</option>
+  <option value="SADAIC">SADAIC</option>
+  <option value="SANATORIO ROCA">SANATORIO ROCA</option>
+  <option value="SANATORIO SARMIENTO">SANATORIO SARMIENTO</option>
+  <option value="SANCOR SALUD">SANCOR SALUD</option>
+  <option value="SEGURO ESOLAR DE LA PROV.">SEGURO ESOLAR DE LA PROV.</option>
+  <option value="SERRA">SERRA</option>
+  <option value="SERVESALUD">SERVESALUD</option>
+  <option value="SIN CARGO">SIN CARGO</option>
+  <option value="SIN COPAGO PEDIATRIA">SIN COPAGO PEDIATRIA</option>
+  <option value="SOREMER">SOREMER</option>
+  <option value="SUBOFICIALES RETIRADOS">SUBOFICIALES RETIRADOS</option>
+  <option value="SUBSIDIO DE SALUD">SUBSIDIO DE SALUD</option>
+  <option value="SWISS MEDICAL">SWISS MEDICAL</option>
+  <option value="TV SALUD">TV SALUD</option>
+  <option value="UNION PERSONAL">UNION PERSONAL</option>
+  <option value="UOM (OSUOMRA-Forjar Salud)">UOM (OSUOMRA-Forjar Salud)</option>
+  <option value="UP Union Personal">UP Union Personal</option>
+  <option value="UTA">UTA</option>
+</select>
+    <button class="btn-buscar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;margin-right:6px;">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      Buscar
+    </button>
+  </section>
+
+  <main class="main-content">
+    <h1 class="page-title">Informes de Turno</h1>
+
+    <!-- FORMULARIO DE FILTROS -->
+    <div class="filters-container">
+      <form id="formFiltros" class="filters-form">
+        
+        <!-- COLUMNA IZQUIERDA -->
+        <div class="filter-column">
+          
+          <!-- Rango Desde -->
+          <div class="filter-group">
+            <label class="filter-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              Desde
+            </label>
+            <div class="date-inputs">
+              <select class="filter-select" id="desdeDia">
+                <option value="">Día</option>
+                <!-- TODO: Generar días del 1 al 31 -->
+              </select>
+              <select class="filter-select" id="desdeMes">
+                <option value="">Mes</option>
+                <!-- TODO: Generar meses -->
+              </select>
+              <select class="filter-select" id="desdeAnio">
+                <option value="">Año</option>
+                <!-- TODO: Generar años -->
+              </select>
+            </div>
+          </div>
+
+          <!-- Médico -->
+          <div class="filter-group">
+            <label class="filter-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+              Médico
+            </label>
+            <select class="filter-select" id="filtroMedico">
+              <option value="">Todos los médicos</option>
+              <!-- TODO: Cargar médicos desde la base de datos -->
+            </select>
+          </div>
+
+          <!-- Estados -->
+          <div class="filter-group">
+            <label class="filter-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              Estados
+            </label>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="estado" value="Reservado">
+                <span class="checkbox-custom"></span>
+                Reservado
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="estado" value="En_Espera">
+                <span class="checkbox-custom"></span>
+                En Espera
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="estado" value="Cancelado">
+                <span class="checkbox-custom"></span>
+                Cancelado
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="estado" value="Atendiendo">
+                <span class="checkbox-custom"></span>
+                Atendiendo
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="estado" value="Finalizado">
+                <span class="checkbox-custom"></span>
+                Finalizado
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLUMNA DERECHA -->
+        <div class="filter-column">
+          
+          <!-- Rango Hasta -->
+          <div class="filter-group">
+            <label class="filter-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              Hasta
+            </label>
+            <div class="date-inputs">
+              <select class="filter-select" id="hastaDia">
+                <option value="">Día</option>
+              </select>
+              <select class="filter-select" id="hastaMes">
+                <option value="">Mes</option>
+              </select>
+              <select class="filter-select" id="hastaAnio">
+                <option value="">Año</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Proceso -->
+          <div class="filter-group">
+            <label class="filter-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+              Proceso
+            </label>
+            <select class="filter-select" id="filtroProceso">
+              <option value="">Todos</option>
+              <!-- TODO: Cargar procesos -->
+            </select>
+          </div>
+
+          <!-- Obra Social -->
+          <div class="filter-group">
+            <label class="filter-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              Obra Social
+            </label>
+            <select class="filter-select" id="filtroObraSocial">
+              <option value="">Todas</option>
+
+  <option value="">Obras Sociales</option>
+  <option value="Particular">Particular</option>
+  <option value="ACA SALUD">ACA SALUD</option>
+  <option value="AMFFA">AMFFA</option>
+  <option value="AMSTERDAN SALUD">AMSTERDAN SALUD</option>
+  <option value="APLA">APLA</option>
+  <option value="APM">APM</option>
+  <option value="ASISPRE">ASISPRE</option>
+  <option value="ASISTIR">ASISTIR</option>
+  <option value="ASISTIR-OSPACA">ASISTIR-OSPACA</option>
+  <option value="ASOC. ECLESIASTICA SAN PEDRO">ASOC. ECLESIASTICA SAN PEDRO</option>
+  <option value="ASUNT">ASUNT</option>
+  <option value="ASUNT (Consulta Especial)">ASUNT (Consulta Especial)</option>
+  <option value="BOREAL">BOREAL</option>
+  <option value="BOREAL.NET">BOREAL.NET</option>
+  <option value="BRAMED SRL">BRAMED SRL</option>
+  <option value="CANILLITAS FLORENCIO SANCHEZ">CANILLITAS FLORENCIO SANCHEZ</option>
+  <option value="CLINICA MAYO">CLINICA MAYO</option>
+  <option value="COLMED OSMEDICA">COLMED OSMEDICA</option>
+  <option value="COLMED TODOS MENOS OSMEDICA">COLMED TODOS MENOS OSMEDICA</option>
+  <option value="COOP. TRABAJADORES AGRICOLAS">COOP. TRABAJADORES AGRICOLAS</option>
+  <option value="COOP. TRABAJADORES EVENTUR">COOP. TRABAJADORES EVENTUR</option>
+  <option value="COOP. TRABAJADORES HUMANA">COOP. TRABAJADORES HUMANA</option>
+  <option value="COOP. TRABAJADORES INSTALADORES">COOP. TRABAJADORES INSTALADORES</option>
+  <option value="CRISTAL SALUD - APPI SRL">CRISTAL SALUD - APPI SRL</option>
+  <option value="DASUTEN">DASUTEN</option>
+  <option value="DIARIOS Y REVISTAS">DIARIOS Y REVISTAS</option>
+  <option value="DIBA">DIBA</option>
+  <option value="FARMACIA (GAPRESA)">FARMACIA (GAPRESA)</option>
+  <option value="FOTIA - OSPAAТ">FOTIA - OSPAAТ</option>
+  <option value="FUERZA AEREA">FUERZA AEREA</option>
+  <option value="GALENO">GALENO</option>
+  <option value="GALENO CONSULTIN GROUP">GALENO CONSULTIN GROUP</option>
+  <option value="GALVEZ">GALVEZ</option>
+  <option value="INTERSALUD">INTERSALUD</option>
+  <option value="IOSE">IOSE</option>
+  <option value="JERARQUICOS SALUD">JERARQUICOS SALUD</option>
+  <option value="LUIS PASTEUR">LUIS PASTEUR</option>
+  <option value="MAPFRE">MAPFRE</option>
+  <option value="MEDICUS">MEDICUS</option>
+  <option value="MEDIFE">MEDIFE</option>
+  <option value="MITA">MITA</option>
+  <option value="MORA">MORA</option>
+  <option value="MUTUAL 10 DE ABRIL">MUTUAL 10 DE ABRIL</option>
+  <option value="MUTUAL PERSONAL AGUA Y ENERGIA">MUTUAL PERSONAL AGUA Y ENERGIA</option>
+  <option value="NOR MEDICA">NOR MEDICA</option>
+  <option value="NORTE SALUD">NORTE SALUD</option>
+  <option value="OMINT">OMINT</option>
+  <option value="OPDEA">OPDEA</option>
+  <option value="ORDEN PRESTADA">ORDEN PRESTADA</option>
+  <option value="OSACRA">OSACRA</option>
+  <option value="OSAPM">OSAPM</option>
+  <option value="OSDDIP">OSDDIP</option>
+  <option value="OSDE">OSDE</option>
+  <option value="OSDOP">OSDOP</option>
+  <option value="OSETYA">OSETYA</option>
+  <option value="OSFATUN">OSFATUN</option>
+  <option value="OSJERA (Jerarquicos Rep. Argentina)">OSJERA (Jerarquicos Rep. Argentina)</option>
+  <option value="OSMATA">OSMATA</option>
+  <option value="OSMITA">OSMITA</option>
+  <option value="OSPA (Personal Aeronautico)">OSPA (Personal Aeronautico)</option>
+  <option value="OSPECOM">OSPECOM</option>
+  <option value="OSPEGAP (Petroleros)">OSPEGAP (Petroleros)</option>
+  <option value="OSPERSAAMS">OSPERSAAMS</option>
+  <option value="OSPERYHRA">OSPERYHRA</option>
+  <option value="OSPES (Estaciones de Servicio)">OSPES (Estaciones de Servicio)</option>
+  <option value="OSPIA AZUCARERA">OSPIA AZUCARERA</option>
+  <option value="OSPIL (Lecheros)">OSPIL (Lecheros)</option>
+  <option value="OSPIP">OSPIP</option>
+  <option value="OSPLAD">OSPLAD</option>
+  <option value="OSPRERA">OSPRERA</option>
+  <option value="OSPTA (Tecnico Aeronautico)">OSPTA (Tecnico Aeronautico)</option>
+  <option value="OSSEG (SEGUROS)">OSSEG (SEGUROS)</option>
+  <option value="OSSEIF (Ing. La Fronterita)">OSSEIF (Ing. La Fronterita)</option>
+  <option value="OSSEIÑ (Ing. Ñuñorco)">OSSEIÑ (Ing. Ñuñorco)</option>
+  <option value="PAMI">PAMI</option>
+  <option value="PARA REINTEGRO">PARA REINTEGRO</option>
+  <option value="PARQUE SALUD">PARQUE SALUD</option>
+  <option value="PARTICULAR">PARTICULAR</option>
+  <option value="PATRONES DE CABOTAJE">PATRONES DE CABOTAJE</option>
+  <option value="PODER JUDICIAL">PODER JUDICIAL</option>
+  <option value="POLICIA FEDERAL">POLICIA FEDERAL</option>
+  <option value="PRENSA">PRENSA</option>
+  <option value="PREVENCION SALUD">PREVENCION SALUD</option>
+  <option value="RED DE SEGUROS MEDICOS">RED DE SEGUROS MEDICOS</option>
+  <option value="SADAIC">SADAIC</option>
+  <option value="SANATORIO ROCA">SANATORIO ROCA</option>
+  <option value="SANATORIO SARMIENTO">SANATORIO SARMIENTO</option>
+  <option value="SANCOR SALUD">SANCOR SALUD</option>
+  <option value="SEGURO ESOLAR DE LA PROV.">SEGURO ESOLAR DE LA PROV.</option>
+  <option value="SERRA">SERRA</option>
+  <option value="SERVESALUD">SERVESALUD</option>
+  <option value="SIN CARGO">SIN CARGO</option>
+  <option value="SIN COPAGO PEDIATRIA">SIN COPAGO PEDIATRIA</option>
+  <option value="SOREMER">SOREMER</option>
+  <option value="SUBOFICIALES RETIRADOS">SUBOFICIALES RETIRADOS</option>
+  <option value="SUBSIDIO DE SALUD">SUBSIDIO DE SALUD</option>
+  <option value="SWISS MEDICAL">SWISS MEDICAL</option>
+  <option value="TV SALUD">TV SALUD</option>
+  <option value="UNION PERSONAL">UNION PERSONAL</option>
+  <option value="UOM (OSUOMRA-Forjar Salud)">UOM (OSUOMRA-Forjar Salud)</option>
+  <option value="UP Union Personal">UP Union Personal</option>
+  <option value="UTA">UTA</option>
+
+              <!-- TODO: Cargar obras sociales -->
+            </select>
+          </div>
+
+          <!-- Tipo de OS -->
+          <div class="filter-group">
+            <label class="filter-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+                <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+              </svg>
+              Tipo de OS
+            </label>
+            <select class="filter-select" id="filtroTipoOS">
+              <option value="">Todos</option>
+              <!-- TODO: Cargar tipos de OS -->
+            </select>
+          </div>
+
+          <!-- Especialidad -->
+          <div class="filter-group">
+            <label class="filter-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+              Especialidad
+            </label>
+            <select class="filter-select" id="filtroEspecialidad">
+              <option value="">Todas</option>
+              <!-- TODO: Cargar especialidades -->
+            </select>
+          </div>
+
+          <!-- Caja -->
+          <div class="filter-group">
+            <label class="filter-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+              Caja
+            </label>
+            <select class="filter-select" id="filtroCaja">
+              <option value="no">No</option>
+              <option value="si">Sí</option>
+            </select>
+          </div>
+
+          <!-- Historia -->
+          <div class="filter-group">
+            <label class="filter-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+              </svg>
+              Historia
+            </label>
+            <input type="text" class="filter-input" id="filtroHistoria" placeholder="N° de historia">
+          </div>
+
+        </div>
+
+      </form>
+
+      <!-- BOTÓN FILTRAR -->
+      <div class="filter-actions">
+        <button class="btn-filtrar" id="btnFiltrar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+          </svg>
+          Filtrar
+        </button>
+      </div>
+    </div>
+
+    <!-- RESULTADOS DE LA BÚSQUEDA -->
+    <div class="results-container" id="resultadosContainer" style="display:none;">
+      <div class="results-header">
+        <h2 class="results-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;">
+            <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+          Resultados
+        </h2>
+        <span class="results-count" id="resultsCount">0 turnos encontrados</span>
+      </div>
+
+      <div class="table-container">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Paciente</th>
+              <th>Médico</th>
+              <th>Especialidad</th>
+              <th>Obra Social</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="tablaResultados">
+            <!-- 
+              ============================================================
+              TODO: LÓGICA DE CARGA DE RESULTADOS
+              ============================================================
+              Aquí debe ir la lógica para cargar los turnos filtrados.
+              Cada fila debe tener la siguiente estructura:
+              
+              <tr>
+                <td>ID_TURNO</td>
+                <td>FECHA</td>
+                <td>HORA</td>
+                <td>PACIENTE</td>
+                <td>MÉDICO</td>
+                <td>ESPECIALIDAD</td>
+                <td>OBRA SOCIAL</td>
+                <td><span class="estado-badge estado-XXX">ESTADO</span></td>
+              </tr>
+              
+              Clases para estados:
+              - estado-Reservado (azul)
+              - estado-En_Espera (naranja)
+              - estado-Cancelado (rojo)
+              - estado-Atendiendo (amarillo)
+              - estado-Finalizado (verde)
+              ============================================================
+            -->
+          </tbody>
+        </table>
+
+        <!-- ESTADO VACÍO DE RESULTADOS -->
+        <div class="empty-state" id="estadoVacioResultados">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:64px;height:64px;opacity:0.4;">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <h3>No se encontraron turnos</h3>
+          <p>Intentá ajustar los filtros y volver a buscar.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // ==========================================
+    // TEMA OSCURO / CLARO
+    // ==========================================
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const iconSun = document.querySelector('.icon-sun');
+    const iconMoon = document.querySelector('.icon-moon');
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      if (theme === 'dark') {
+        iconSun.style.display = 'none';
+        iconMoon.style.display = 'block';
+      } else {
+        iconSun.style.display = 'block';
+        iconMoon.style.display = 'none';
+      }
+    }
+
+    // ==========================================
+    // TODO: LÓGICA DE FILTROS E INFORMES
+    // ==========================================
+    // Aquí debe ir la lógica para:
+    // 1. Cargar opciones de filtros (médicos, obras sociales, especialidades, etc.)
+    // 2. Generar opciones de días/meses/años para los selectores de fecha
+    // 3. Manejar el evento de filtrado
+    // 4. Realizar la consulta a la base de datos con los filtros seleccionados
+    // 5. Mostrar los resultados en la tabla
+    // 6. Manejar los badges de estado con colores
+    // 7. Exportar resultados (opcional)
+
+    document.getElementById('btnFiltrar').addEventListener('click', () => {
+      // TODO: Recopilar todos los filtros y hacer la consulta
+      const filtros = {
+        desde: {
+          dia: document.getElementById('desdeDia').value,
+          mes: document.getElementById('desdeMes').value,
+          anio: document.getElementById('desdeAnio').value
+        },
+        hasta: {
+          dia: document.getElementById('hastaDia').value,
+          mes: document.getElementById('hastaMes').value,
+          anio: document.getElementById('hastaAnio').value
+        },
+        medico: document.getElementById('filtroMedico').value,
+        estados: Array.from(document.querySelectorAll('input[name="estado"]:checked')).map(cb => cb.value),
+        proceso: document.getElementById('filtroProceso').value,
+        obraSocial: document.getElementById('filtroObraSocial').value,
+        tipoOS: document.getElementById('filtroTipoOS').value,
+        especialidad: document.getElementById('filtroEspecialidad').value,
+        caja: document.getElementById('filtroCaja').value,
+        historia: document.getElementById('filtroHistoria').value
+      };
+      
+      console.log('Filtros aplicados:', filtros);
+      // TODO: Llamar a la función que consulta la base de datos
+    });
+  </script>
+</body>
+</html>

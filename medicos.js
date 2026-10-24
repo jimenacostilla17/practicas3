@@ -578,3 +578,83 @@ function guardarContenidoEditores() {
     mensajeWhatsApp: document.getElementById('mensajeWhatsApp').value
   };
 }
+
+// ==========================================
+// 11. LÓGICA DE GUARDAR Y CANCELAR
+// (Pegar al final de medicos.js)
+// ==========================================
+
+document.querySelector('.btn-guardar').addEventListener('click', () => {
+  const nombre = medicoSelect.value;
+  if (!nombre) {
+    alert("⚠️ Por favor, seleccione o cree un médico primero.");
+    return;
+  }
+
+  // 1. Recopilar Especialidades
+  const especialidadesSeleccionadas = Array.from(document.querySelectorAll('.especialidad:checked')).map(cb => cb.value);
+
+  // 2. Recopilar Días
+  const diasSeleccionados = Array.from(document.querySelectorAll('.dia:checked')).map(cb => cb.value);
+
+  // 3. Recopilar Horarios (Mañana y Tarde)
+  const horariosActualizados = {};
+  Object.keys(diasConfig).forEach(diaNombre => {
+    const config = diasConfig[diaNombre];
+    horariosActualizados[config.key + "MananaEntrada"] = document.getElementById(config.mananaE).value || "";
+    horariosActualizados[config.key + "MananaSalida"] = document.getElementById(config.mananaS).value || "";
+    horariosActualizados[config.key + "TardeEntrada"] = document.getElementById(config.tardeE).value || "";
+    horariosActualizados[config.key + "TardeSalida"] = document.getElementById(config.tardeS).value || "";
+  });
+
+  // 4. Recopilar contenido de Editores
+  const contenidoEditores = guardarContenidoEditores();
+
+  // 5. Actualizar el objeto del médico en memoria
+  medicos[nombre] = {
+    matricula: matricula.value || "",
+    sistema: sistema.value || "1",
+    consultorio: consultorio.value || "",
+    factura: factura.value || "1",
+    tiempoMinimo: tiempoMinimo.value || "30",
+    verVacios: verVacios.value,
+    visiblePantallas: visiblePantallas.value,
+    turnosInternet: turnosInternet.value,
+    especialidades: especialidadesSeleccionadas,
+    dias: diasSeleccionados,
+    horarios: horariosActualizados,
+    detalle: contenidoEditores.detalle,
+    mensajeInternet: contenidoEditores.mensajeInternet,
+    mensajeWhatsApp: contenidoEditores.mensajeWhatsApp
+  };
+
+  // Feedback visual de éxito
+  const btnGuardar = document.querySelector('.btn-guardar');
+  const textoOriginal = btnGuardar.innerHTML;
+  btnGuardar.innerHTML = '✅ ¡Guardado!';
+  btnGuardar.style.background = 'var(--color-success)';
+  
+  setTimeout(() => {
+    btnGuardar.innerHTML = textoOriginal;
+    btnGuardar.style.background = ''; 
+  }, 2000);
+});
+
+document.querySelector('.btn-cancelar').addEventListener('click', () => {
+  const nombre = medicoSelect.value;
+  if (!nombre) {
+    medicoSearch.value = "";
+    medicoSelect.value = "";
+    limpiarCheckboxes();
+    matricula.value = ""; sistema.value = ""; consultorio.value = "";
+    factura.value = ""; tiempoMinimo.value = "";
+    if (typeof quillDetalle !== 'undefined') quillDetalle.setText('');
+    if (typeof quillMensajeInternet !== 'undefined') quillMensajeInternet.setText('');
+    document.getElementById('mensajeWhatsApp').value = '';
+    return;
+  }
+
+  if (confirm("¿Estás seguro de que deseas descartar los cambios no guardados?")) {
+    cargarMedico(); // Recarga los datos originales desde el objeto 'medicos'
+  }
+});
